@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MPC - Playoff Stage</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo-text">
+        MPC
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            HOME
+        </a>
+
+        <a href="/leaderboard">
+            LEADERBOARD
+        </a>
+
+        <a href="/playoff"
+           class="active">
+            PLAYOFF STAGE
+        </a>
+
+        <a href="/moments">
+            MOMENTS
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="page-container">
+
+    <a href="/" class="back">
+        ← KEMBALI
+    </a>
+
+
+    <header class="playoff-header">
+
+        <h1>
+            PLAYOFF STAGE
+        </h1>
+
+        <p>
+            MPC TOURNAMENT
+        </p>
+
+    </header>
+
+
+    <section class="playoff-board">
+
+
+        <!-- =========================
+             SEMI FINALS
+        ========================== -->
+
+        <div class="bracket-column semi-column">
+
+            <h2>
+                SEMI FINALS
+            </h2>
+
+            <p class="bo">
+                BO3
+            </p>
+
+
+            {% for match in semi_finals %}
+
+            <div class="match">
+
+                <div class="team-row">
+
+                    <span>
+                        {{ match.team1 }}
+                    </span>
+
+                    <strong>
+                        {{ match.score1 }}
+                    </strong>
+
+                </div>
+
+
+                <div class="team-row">
+
+                    <span>
+                        {{ match.team2 }}
+                    </span>
+
+                    <strong>
+                        {{ match.score2 }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- =========================
+             GRAND FINAL
+        ========================== -->
+
+        <div class="bracket-column grand-column">
+
+            <h2>
+                GRAND FINALS
+            </h2>
+
+            <p class="bo">
+                BO5
+            </p>
+
+
+            <div class="match grand-match">
+
+                <div class="team-row winner">
+
+                    <span>
+                        {{ grand_final.team1 }}
+                    </span>
+
+                    <strong>
+                        {{ grand_final.score1 }}
+                    </strong>
+
+                </div>
+
+
+                <div class="team-row">
+
+                    <span>
+                        {{ grand_final.team2 }}
+                    </span>
+
+                    <strong>
+                        {{ grand_final.score2 }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             QUALIFIED TEAMS
+        ========================== -->
+
+        <div class="qualified-column">
+
+            <h2>
+                QUALIFIED PLAYOFF TEAMS
+            </h2>
+
+
+            <div class="qualified-list">
+
+                {% for team in playoff_teams %}
+
+                <div class="qualified-card">
+
+                    <span class="rank">
+                        {{ loop.index }}
+                    </span>
+
+                    <span class="team-name">
+                        {{ team }}
+                    </span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <section class="note-box">
+
+        <h2>
+            NOTE
+        </h2>
+
+        <p>
+            All matches are played in Best of format (BO).
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 MPC TOURNAMENT
+
+</footer>
+
+
+</body>
+</html>
