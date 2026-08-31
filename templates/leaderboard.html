@@ -8,15 +8,20 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>MPC Leaderboard</title>
+    <title>MPC - Leaderboard</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
+
 <body>
 
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
 
 <nav>
 
@@ -32,11 +37,17 @@
 
         <a href="/leaderboard"
            class="active">
+
             LEADERBOARD
+
         </a>
 
         <a href="/playoff">
             PLAYOFF STAGE
+        </a>
+
+        <a href="/moments">
+            MOMENTS
         </a>
 
     </div>
@@ -44,18 +55,25 @@
 </nav>
 
 
+<!-- ==========================================
+     MAIN
+========================================== -->
+
 <main class="page-container">
 
 
-    <a href="/" class="back">
+    <a href="/"
+       class="back">
+
         ← KEMBALI
+
     </a>
 
 
     <header class="page-header">
 
         <h1>
-            MPC
+            LEADERBOARD
         </h1>
 
         <p>
@@ -65,9 +83,9 @@
     </header>
 
 
-    <!-- ==================================
-         PLAYER LEADERBOARD
-    =================================== -->
+    <!-- ======================================
+         PLAYER
+    ======================================= -->
 
     <section class="table-section">
 
@@ -111,7 +129,7 @@
                             {{ loop.index }}
                         </td>
 
-                        <td class="left">
+                        <td>
                             {{ player.name }}
                         </td>
 
@@ -132,9 +150,9 @@
     </section>
 
 
-    <!-- ==================================
-         TEAM STATISTICS
-    =================================== -->
+    <!-- ======================================
+         TEAM
+    ======================================= -->
 
     <section class="table-section">
 
@@ -182,7 +200,7 @@
                             {{ loop.index }}
                         </td>
 
-                        <td class="left">
+                        <td>
                             {{ team.name }}
                         </td>
 
