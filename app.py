@@ -4,86 +4,93 @@ app = Flask(__name__)
 
 
 # ==========================================
-# TEAM DATA
+# TEAM LEADERBOARD
+# 6 TEAM
 # ==========================================
 
 teams = [
     {
-        "name": "TEAM ALPHA",
+        "name": "TEAM 1",
         "win": 5,
+        "loss": 0
+    },
+    {
+        "name": "TEAM 2",
+        "win": 4,
         "loss": 1
     },
     {
-        "name": "TEAM BRAVO",
-        "win": 4,
-        "loss": 2
-    },
-    {
-        "name": "TEAM CHARLIE",
-        "win": 4,
-        "loss": 2
-    },
-    {
-        "name": "TEAM DELTA",
+        "name": "TEAM 3",
         "win": 3,
+        "loss": 2
+    },
+    {
+        "name": "TEAM 4",
+        "win": 2,
         "loss": 3
     },
     {
-        "name": "TEAM ECHO",
-        "win": 2,
+        "name": "TEAM 5",
+        "win": 1,
         "loss": 4
     },
     {
-        "name": "TEAM FOXTROT",
-        "win": 1,
+        "name": "TEAM 6",
+        "win": 0,
         "loss": 5
     }
 ]
 
 
 # ==========================================
-# PLAYER DATA
+# PLAYER LEADERBOARD
+# 30 PLAYER
 # ==========================================
 
 players = [
-    {
-        "name": "PLAYER 1",
-        "pts": 100
-    },
-    {
-        "name": "PLAYER 2",
-        "pts": 90
-    },
-    {
-        "name": "PLAYER 3",
-        "pts": 80
-    },
-    {
-        "name": "PLAYER 4",
-        "pts": 70
-    },
-    {
-        "name": "PLAYER 5",
-        "pts": 60
-    },
-    {
-        "name": "PLAYER 6",
-        "pts": 50
-    }
+    {"name": "PLAYER 1", "pts": 100},
+    {"name": "PLAYER 2", "pts": 95},
+    {"name": "PLAYER 3", "pts": 90},
+    {"name": "PLAYER 4", "pts": 85},
+    {"name": "PLAYER 5", "pts": 80},
+    {"name": "PLAYER 6", "pts": 75},
+    {"name": "PLAYER 7", "pts": 70},
+    {"name": "PLAYER 8", "pts": 65},
+    {"name": "PLAYER 9", "pts": 60},
+    {"name": "PLAYER 10", "pts": 55},
+    {"name": "PLAYER 11", "pts": 50},
+    {"name": "PLAYER 12", "pts": 45},
+    {"name": "PLAYER 13", "pts": 40},
+    {"name": "PLAYER 14", "pts": 35},
+    {"name": "PLAYER 15", "pts": 30},
+    {"name": "PLAYER 16", "pts": 25},
+    {"name": "PLAYER 17", "pts": 20},
+    {"name": "PLAYER 18", "pts": 15},
+    {"name": "PLAYER 19", "pts": 10},
+    {"name": "PLAYER 20", "pts": 5},
+    {"name": "PLAYER 21", "pts": 0},
+    {"name": "PLAYER 22", "pts": 0},
+    {"name": "PLAYER 23", "pts": 0},
+    {"name": "PLAYER 24", "pts": 0},
+    {"name": "PLAYER 25", "pts": 0},
+    {"name": "PLAYER 26", "pts": 0},
+    {"name": "PLAYER 27", "pts": 0},
+    {"name": "PLAYER 28", "pts": 0},
+    {"name": "PLAYER 29", "pts": 0},
+    {"name": "PLAYER 30", "pts": 0}
 ]
 
 
 # ==========================================
 # PLAYOFF TEAMS
+# HANYA 4 TEAM
 # ==========================================
 
 playoff_teams = [
-    "TEAM ALPHA",
-    "TEAM BRAVO",
-    "TEAM CHARLIE",
-    "TEAM DELTA",
-    "TEAM ECHO",
-    "TEAM FOXTROT"
+    "TEAM 1",
+    "TEAM 2",
+    "TEAM 3",
+    "TEAM 4"
 ]
 
 
@@ -92,18 +99,21 @@ playoff_teams = [
 # ==========================================
 
 semi_finals = [
+
     {
-        "team1": "TEAM ALPHA",
+        "team1": "TEAM 1",
         "score1": 0,
-        "team2": "TEAM DELTA",
+        "team2": "TEAM 4",
         "score2": 0
     },
+
     {
-        "team1": "TEAM BRAVO",
+        "team1": "TEAM 2",
         "score1": 0,
-        "team2": "TEAM CHARLIE",
+        "team2": "TEAM 3",
         "score2": 0
     }
+
 ]
 
 
@@ -112,21 +122,25 @@ semi_finals = [
 # ==========================================
 
 grand_final = {
-    "team1": "TBD",
+
+    "team1": "WINNER SF1",
     "score1": 0,
-    "team2": "TBD",
+
+    "team2": "WINNER SF2",
     "score2": 0
 }
 
 
 # ==========================================
-# THIRD PLACE MATCH
+# THIRD PLACE
 # ==========================================
 
 third_place = {
-    "team1": "LOSER SEMI FINAL 1",
+
+    "team1": "LOSER SF1",
     "score1": 0,
-    "team2": "LOSER SEMI FINAL 2",
+
+    "team2": "LOSER SF2",
     "score2": 0
 }
 
@@ -137,7 +151,10 @@ third_place = {
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+
+    return render_template(
+        "index.html"
+    )
 
 
 # ==========================================
@@ -146,10 +163,11 @@ def home():
 
 @app.route("/leaderboard")
 def leaderboard():
+
     return render_template(
         "leaderboard.html",
-        players=players,
-        teams=teams
+        teams=teams,
+        players=players
     )
 
 
@@ -159,11 +177,16 @@ def leaderboard():
 
 @app.route("/playoff")
 def playoff():
+
     return render_template(
         "playoff.html",
+
         playoff_teams=playoff_teams,
+
         semi_finals=semi_finals,
+
         grand_final=grand_final,
+
         third_place=third_place
     )
 
