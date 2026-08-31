@@ -15,13 +15,7 @@
 
 </head>
 
-
 <body>
-
-
-<!-- ==========================================
-     NAVIGATION
-========================================== -->
 
 <nav>
 
@@ -35,11 +29,8 @@
             HOME
         </a>
 
-        <a href="/leaderboard"
-           class="active">
-
+        <a href="/leaderboard" class="active">
             LEADERBOARD
-
         </a>
 
         <a href="/playoff">
@@ -51,12 +42,7 @@
 </nav>
 
 
-<!-- ==========================================
-     LEADERBOARD
-========================================== -->
-
 <main class="page-container">
-
 
     <a href="/" class="back">
         ← KEMBALI
@@ -70,22 +56,21 @@
         </h1>
 
         <p>
-            MPC TOURNAMENT
+            PLAYER • MATCH • CHAMPION
         </p>
 
     </header>
 
 
     <!-- ======================================
-         PLAYER LEADERBOARD
+         TEAM LEADERBOARD
     ======================================= -->
 
     <section class="table-section">
 
         <h2>
-            PLAYER LEADERBOARD
+            TEAM LEADERBOARD
         </h2>
-
 
         <div class="table-container">
 
@@ -94,94 +79,13 @@
                 <thead>
 
                     <tr>
-
-                        <th>
-                            NO
-                        </th>
-
-                        <th>
-                            NAMA PLAYER
-                        </th>
-
-                        <th>
-                            PTS
-                        </th>
-
+                        <th>NO</th>
+                        <th>TEAM</th>
+                        <th>WIN</th>
+                        <th>LOSS</th>
                     </tr>
 
                 </thead>
-
-
-                <tbody>
-
-                    {% for player in players %}
-
-                    <tr>
-
-                        <td>
-                            {{ loop.index }}
-                        </td>
-
-                        <td>
-                            {{ player.name }}
-                        </td>
-
-                        <td>
-                            {{ player.pts }}
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================
-         TEAM STATISTICS
-    ======================================= -->
-
-    <section class="table-section">
-
-        <h2>
-            TEAM STATISTICS
-        </h2>
-
-
-        <div class="table-container">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            NO
-                        </th>
-
-                        <th>
-                            TEAM
-                        </th>
-
-                        <th>
-                            WIN
-                        </th>
-
-                        <th>
-                            LOSS
-                        </th>
-
-                    </tr>
-
-                </thead>
-
 
                 <tbody>
 
@@ -193,7 +97,7 @@
                             {{ loop.index }}
                         </td>
 
-                        <td>
+                        <td class="left">
                             {{ team.name }}
                         </td>
 
@@ -218,15 +122,67 @@
     </section>
 
 
+    <!-- ======================================
+         PLAYER LEADERBOARD
+         30 PLAYER
+    ======================================= -->
+
+    <section class="table-section">
+
+        <h2>
+            PLAYER LEADERBOARD
+        </h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>NO</th>
+                        <th>PLAYER</th>
+                        <th>PTS</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for player in players %}
+
+                    <tr>
+
+                        <td>
+                            {{ loop.index }}
+                        </td>
+
+                        <td class="left">
+                            {{ player.name }}
+                        </td>
+
+                        <td>
+                            {{ player.pts }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
 </main>
 
 
 <footer>
-
     © 2026 MPC TOURNAMENT
-
 </footer>
-
 
 </body>
 </html>
