@@ -17,6 +17,7 @@ body {
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -26,10 +27,14 @@ body {
 
 nav {
     min-height: 70px;
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 4%;
+
     background: #000;
     border-bottom: 1px solid #12345a;
 }
@@ -45,6 +50,7 @@ nav {
 .menu,
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
@@ -55,7 +61,6 @@ nav {
     font-size: 14px;
     font-weight: bold;
     padding: 25px 0;
-    transition: 0.2s;
 }
 
 .menu a:hover,
@@ -119,11 +124,9 @@ nav {
     padding: 14px 28px;
 
     color: #fff;
-
     border: 1px solid #009dff;
 
     text-decoration: none;
-
     font-weight: bold;
 
     transition: 0.2s;
@@ -142,46 +145,23 @@ nav {
 .page-container {
     width: 94%;
     max-width: 1500px;
+
     margin: auto;
+
     padding: 25px 0 70px;
 }
 
 .back {
     display: inline-block;
+
     color: #009dff;
     text-decoration: none;
+
     margin-bottom: 20px;
 }
 
 .back:hover {
     text-decoration: underline;
-}
-
-
-/* ==========================================
-   PAGE HEADER
-========================================== */
-
-.page-header,
-.playoff-header {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.page-header h1,
-.playoff-header h1 {
-    background: #082d70;
-    border: 1px solid #075fa5;
-    padding: 18px;
-    font-size: 34px;
-}
-
-.page-header p,
-.playoff-header p {
-    color: #009dff;
-    margin-top: 14px;
-    font-weight: bold;
-    letter-spacing: 3px;
 }
 
 
@@ -192,7 +172,9 @@ nav {
 .leaderboard {
     width: 94%;
     max-width: 1500px;
+
     margin: auto;
+
     padding: 25px 0 70px;
 }
 
@@ -200,7 +182,6 @@ nav {
     text-align: center;
 
     background: #082d70;
-
     border: 1px solid #075fa5;
 
     padding: 18px;
@@ -210,7 +191,7 @@ nav {
     margin-bottom: 18px;
 }
 
-.leaderboard .subtitle {
+.subtitle {
     color: #009dff;
 
     font-weight: bold;
@@ -228,7 +209,6 @@ nav {
     text-align: center;
 
     background: #082d70;
-
     border: 1px solid #075fa5;
 
     padding: 16px;
@@ -241,11 +221,6 @@ nav {
    TABLE
 ========================================== */
 
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -253,14 +228,19 @@ table {
 
 th {
     background: #082d70;
+
     border: 1px solid #164c76;
+
     padding: 15px;
+
     text-align: center;
 }
 
 td {
     border: 1px solid #15334e;
+
     padding: 13px;
+
     text-align: center;
 }
 
@@ -268,97 +248,116 @@ td.left {
     text-align: left;
 }
 
-tbody tr:hover,
 table tr:hover {
     background: #031426;
 }
 
 
 /* ==========================================
-   PLAYOFF PAGE
+   PLAYOFF HEADER
 ========================================== */
 
 .playoff-header {
     width: 94%;
     max-width: 1500px;
-    margin: 30px auto 0;
+
+    margin: 30px auto 35px;
+
+    text-align: center;
+}
+
+.playoff-header h1 {
+    background: #082d70;
+
+    border: 1px solid #075fa5;
+
+    padding: 18px;
+
+    font-size: 34px;
+}
+
+.playoff-header p {
+    color: #009dff;
+
+    margin-top: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
 }
 
 
 /* ==========================================
-   PLAYOFF BRACKET
+   PLAYOFF BOX
 ========================================== */
 
-.playoff-bracket {
-    position: relative;
-
+.playoff-box {
     width: 94%;
     max-width: 1500px;
 
-    min-height: 650px;
-
     margin: 0 auto;
+}
 
-    padding: 70px 45px 50px;
 
-    background: #000;
+/* ==========================================
+   BRACKET
 
-    border: 1px solid #123e63;
+   MATCH DENGAN HTML KAU:
+   .bracket
+   .round
+   .semi-round
+   .final-round
+========================================== */
+
+.bracket {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 650px;
 
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
 
-    column-gap: 150px;
+    gap: 80px;
 
     align-items: start;
+
+    padding: 50px 20px;
 
     overflow: visible;
 }
 
 
 /* ==========================================
-   ROUND TITLES
+   ROUND
 ========================================== */
 
-.semi-finals-round h2,
-.grand-final-round h2 {
+.round {
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+.round h3 {
     text-align: center;
 
-    font-size: 21px;
+    font-size: 20px;
 
     margin-bottom: 8px;
 }
 
 .bo {
-    color: #777;
-
     text-align: center;
+
+    color: #777;
 
     font-size: 13px;
 
     margin-bottom: 25px;
-}
-
-
-/* ==========================================
-   SEMI FINALS
-========================================== */
-
-.semi-finals-round {
-    position: relative;
-
-    width: 100%;
-
-    z-index: 3;
-}
-
-.semi-match {
-    width: 100%;
-
-    max-width: 420px;
-
-    margin: 0 auto 75px;
 }
 
 
@@ -368,6 +367,11 @@ table tr:hover {
 
 .match {
     width: 100%;
+
+    max-width: 420px;
+
+    margin-left: auto;
+    margin-right: auto;
 
     background: #000;
 
@@ -383,7 +387,7 @@ table tr:hover {
 
     justify-content: space-between;
 
-    padding: 0 18px;
+    padding: 0 15px;
 
     border-bottom: 1px solid #164c76;
 
@@ -398,30 +402,43 @@ table tr:hover {
     font-size: 17px;
 }
 
-.team-row.winner {
-    background: #082d70;
 
-    border-left: 4px solid #009dff;
+/* ==========================================
+   SEMI ROUND
+========================================== */
+
+.semi-round {
+    position: relative;
+}
+
+
+/*
+   Match kedua diturunkan sedikit.
+*/
+
+.semi-round .match {
+    margin-bottom: 75px;
 }
 
 
 /* ==========================================
-   SEMI FINAL -> GRAND FINAL CONNECTOR
+   SEMI FINAL -> GRAND FINAL
+   CONNECTOR
 ========================================== */
 
 /*
-   Semi Final 1 dan Semi Final 2
-   disambungkan dengan garisan menegak.
+   Garisan ini dibuat pada kawasan
+   antara Semi Final dan Grand Final.
 */
 
-.semi-finals-round::after {
+.semi-round::after {
     content: "";
 
     position: absolute;
 
     top: 150px;
 
-    right: -105px;
+    right: -55px;
 
     width: 55px;
 
@@ -438,26 +455,23 @@ table tr:hover {
 
 
 /*
-   Garisan mendatar dari tengah
-   menuju ke Grand Final.
+   Garisan tengah menuju Grand Final.
 */
 
-.semi-finals-round::before {
+.semi-round::before {
     content: "";
 
     position: absolute;
 
     top: 275px;
 
-    right: -205px;
+    right: -135px;
 
-    width: 205px;
+    width: 135px;
 
     border-top: 2px solid #009dff;
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 
@@ -465,53 +479,100 @@ table tr:hover {
    GRAND FINAL
 ========================================== */
 
-.grand-final-round {
+.final-round {
     position: relative;
 
     padding-top: 125px;
 
-    width: 100%;
-
     z-index: 5;
 }
 
-.grand-match {
-    width: 100%;
-
-    max-width: 420px;
-
-    margin: 0 auto;
+.final-round .match {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 /* ==========================================
-   QUALIFIED TEAMS
+   THIRD PLACE MATCH
+   BERASINGAN
+   TIADA GARIS PENYAMBUNG
 ========================================== */
 
-.qualified-round {
-    grid-column: 1 / 3;
+.third-place-box {
+    width: 550px;
 
-    width: 100%;
+    max-width: 94%;
 
-    margin-top: 20px;
+    margin: 20px auto 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #000;
+
+    border: 1px solid #164c76;
+}
+
+.third-place-box h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.third-place-box .match {
+    margin-top: 25px;
+
+    text-align: left;
+}
+
+.third-result {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: 1px solid #164c76;
+
+    color: #009dff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   QUALIFIED PLAYOFF TEAMS
+========================================== */
+
+.qualified-section {
+    width: 94%;
+    max-width: 1500px;
+
+    margin: 55px auto 0;
 
     padding-top: 35px;
 
     border-top: 1px solid #123e63;
 }
 
-.qualified-round h2 {
+.qualified-section h2 {
     text-align: center;
 
-    font-size: 21px;
+    background: #082d70;
 
-    margin-bottom: 25px;
+    border: 1px solid #075fa5;
+
+    padding: 16px;
+
+    font-size: 22px;
 }
 
 .qualified-grid {
     max-width: 1000px;
 
-    margin: auto;
+    margin: 25px auto 0;
 
     display: grid;
 
@@ -534,13 +595,11 @@ table tr:hover {
 
 .rank {
     width: 58px;
-
     height: 65px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     background: #082d70;
@@ -562,57 +621,11 @@ table tr:hover {
 
 
 /* ==========================================
-   THIRD PLACE MATCH
-   SEPARATE
-   NO CONNECTOR
-========================================== */
-
-.third-place-section {
-    width: 550px;
-
-    max-width: 94%;
-
-    margin: 55px auto 0;
-
-    padding: 30px;
-
-    text-align: center;
-
-    border: 1px solid #164c76;
-
-    background: #000;
-}
-
-.third-place-section h2 {
-    font-size: 22px;
-
-    margin-bottom: 5px;
-}
-
-.third-match {
-    margin: 25px auto 18px;
-
-    text-align: left;
-}
-
-.third-result {
-    padding: 12px;
-
-    border: 1px solid #164c76;
-
-    color: #009dff;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-
-/* ==========================================
    NOTE
 ========================================== */
 
 .note-box {
+    width: 94%;
     max-width: 650px;
 
     margin: 45px auto 0;
@@ -674,8 +687,6 @@ table tr:hover {
     width: 100%;
 
     display: block;
-
-    background: #000;
 }
 
 
@@ -692,7 +703,7 @@ footer {
 
     border-top: 1px solid #102c45;
 
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 
@@ -702,40 +713,25 @@ footer {
 
 @media (max-width: 1100px) {
 
-    .playoff-bracket {
-        grid-template-columns: 1fr;
+    .bracket {
+        grid-template-columns: 1fr 1fr;
 
-        row-gap: 45px;
-
-        padding: 50px 25px;
+        gap: 50px;
     }
 
-    .grand-final-round {
-        padding-top: 0;
+    .final-round {
+        grid-column: 1 / 3;
+
+        padding-top: 20px;
     }
 
-    .qualified-round {
-        grid-column: 1;
-
-        margin-top: 0;
+    .semi-round::before,
+    .semi-round::after {
+        display: none;
     }
 
     .qualified-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    /*
-       Bila skrin kecil, connector desktop
-       disembunyikan supaya tak rosak layout.
-    */
-
-    .semi-finals-round::before,
-    .semi-finals-round::after {
-        display: none;
-    }
-
-    .moments-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -747,6 +743,8 @@ footer {
 @media (max-width: 700px) {
 
     nav {
+        min-height: auto;
+
         flex-direction: column;
 
         gap: 10px;
@@ -790,44 +788,40 @@ footer {
         font-size: 14px;
     }
 
-    .page-header h1,
     .playoff-header h1 {
         font-size: 25px;
     }
 
-    .leaderboard {
-        width: 94%;
+    .bracket {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 35px 10px;
     }
 
-    .leaderboard h1 {
-        font-size: 28px;
+    .final-round {
+        grid-column: auto;
+
+        padding-top: 0;
     }
 
-    .playoff-bracket {
-        width: 94%;
-
-        padding: 35px 15px;
+    .semi-round::before,
+    .semi-round::after {
+        display: none;
     }
 
     .qualified-grid {
         grid-template-columns: 1fr;
     }
 
-    .third-place-section {
+    .third-place-box {
         width: 94%;
 
         padding: 20px;
     }
 
-    .team-row {
-        min-height: 50px;
-
-        padding: 0 12px;
-
-        font-size: 13px;
-    }
-
-    .team-row strong {
-        font-size: 15px;
+    .moments-grid {
+        grid-template-columns: 1fr;
     }
 }
