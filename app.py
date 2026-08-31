@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 # ==========================================
-# PLAYER LEADERBOARD
+# PLAYER LEADERBOARD - 30 PLAYERS
 # ==========================================
 
 players = [
@@ -42,7 +42,7 @@ players = [
 
 
 # ==========================================
-# TEAM STATISTICS
+# TEAM STATISTICS - 6 TEAMS
 # ==========================================
 
 teams = [
@@ -56,7 +56,7 @@ teams = [
 
 
 # ==========================================
-# QUALIFIED PLAYOFF TEAMS
+# QUALIFIED PLAYOFF TEAMS - 4 TEAMS
 # ==========================================
 
 playoff_teams = [
@@ -76,14 +76,14 @@ semi_finals = [
         "team1": "Team Vitality",
         "score1": 2,
         "team2": "Guangzhou Gaming",
-        "score2": 0,
+        "score2": 0
     },
     {
         "team1": "Team Falcons PH",
         "score1": 2,
         "team2": "True Rippers",
-        "score2": 1,
-    },
+        "score2": 1
+    }
 ]
 
 
@@ -95,31 +95,8 @@ grand_final = {
     "team1": "Team Vitality",
     "score1": 3,
     "team2": "Team Falcons PH",
-    "score2": 1,
+    "score2": 1
 }
-
-
-# ==========================================
-# MOMENTS / VIDEO
-# ==========================================
-
-moments = [
-    {
-        "title": "MOMENT 1",
-        "description": "Highlight pertandingan pertama.",
-        "video": "moment1.mp4",
-    },
-    {
-        "title": "MOMENT 2",
-        "description": "Moment terbaik tournament.",
-        "video": "moment2.mp4",
-    },
-    {
-        "title": "MOMENT 3",
-        "description": "Highlight playoff stage.",
-        "video": "moment3.mp4",
-    },
-]
 
 
 # ==========================================
@@ -155,18 +132,6 @@ def playoff():
         semi_finals=semi_finals,
         grand_final=grand_final,
         playoff_teams=playoff_teams
-    )
-
-
-# ==========================================
-# MOMENTS
-# ==========================================
-
-@app.route("/moments")
-def moments_page():
-    return render_template(
-        "moments.html",
-        moments=moments
     )
 
 
