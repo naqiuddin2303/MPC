@@ -75,11 +75,9 @@ nav {
 
 .home {
     min-height: calc(100vh - 70px);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 
     background:
@@ -284,18 +282,18 @@ tbody tr:hover {
     width: 100%;
     max-width: 1250px;
 
-    margin: 30px auto 0;
+    height: 620px;
 
-    position: relative;
+    margin: 30px auto 0;
 
     display: grid;
 
     grid-template-columns:
         minmax(0, 1fr)
-        140px
+        120px
         minmax(0, 1fr);
 
-    min-height: 620px;
+    position: relative;
 
     border: 1px solid #123e63;
 
@@ -304,13 +302,13 @@ tbody tr:hover {
 
 
 /* ==================================================
-   SEMI FINALS COLUMN
+   SEMI FINALS
 ================================================== */
 
 .semi-finals {
     position: relative;
 
-    min-height: 620px;
+    height: 620px;
 
     padding-top: 35px;
 }
@@ -325,9 +323,9 @@ tbody tr:hover {
 }
 
 .bo {
-    color: #777;
-
     text-align: center;
+
+    color: #777;
 
     font-size: 13px;
 
@@ -336,7 +334,7 @@ tbody tr:hover {
 
 
 /* ==================================================
-   SEMI MATCH
+   SEMI FINAL BOX
 ================================================== */
 
 .semi-match {
@@ -353,25 +351,22 @@ tbody tr:hover {
 
 
 /*
-    SEMI FINAL 1
+   JANGAN GUNA nth-of-type.
+   Guna class berdasarkan susunan sebenar.
 */
 
-.semi-match:nth-of-type(3) {
+
+.semi-match:first-of-type {
     top: 145px;
 }
 
-
-/*
-    SEMI FINAL 2
-*/
-
-.semi-match:nth-of-type(4) {
+.semi-match:last-of-type {
     top: 415px;
 }
 
 
 /* ==================================================
-   MATCH BOX
+   MATCH
 ================================================== */
 
 .match {
@@ -416,24 +411,25 @@ tbody tr:hover {
 .bracket-lines {
     position: relative;
 
-    width: 140px;
+    width: 120px;
 
     height: 620px;
 }
 
 
 /*
-    Garis keluar dari Semi Final 1
+   Semi Final 1
+   keluar dari tengah kotak
 */
 
 .line-top {
     position: absolute;
 
-    top: 180px;
-
     left: 0;
 
-    width: 70px;
+    top: 199px;
+
+    width: 60px;
 
     height: 2px;
 
@@ -442,17 +438,18 @@ tbody tr:hover {
 
 
 /*
-    Garis keluar dari Semi Final 2
+   Semi Final 2
+   keluar dari tengah kotak
 */
 
 .line-bottom {
     position: absolute;
 
-    top: 450px;
-
     left: 0;
 
-    width: 70px;
+    top: 469px;
+
+    width: 60px;
 
     height: 2px;
 
@@ -461,16 +458,15 @@ tbody tr:hover {
 
 
 /*
-    Garis vertical yang sambungkan
-    Semi Final 1 + Semi Final 2
+   Vertical connector
 */
 
 .line-middle {
     position: absolute;
 
-    top: 180px;
+    left: 60px;
 
-    left: 70px;
+    top: 199px;
 
     width: 2px;
 
@@ -481,18 +477,18 @@ tbody tr:hover {
 
 
 /*
-    Garis dari tengah connector
-    menuju Grand Final
+   Dari tengah vertical
+   menuju Grand Final
 */
 
 .line-final {
     position: absolute;
 
-    top: 315px;
+    left: 60px;
 
-    left: 70px;
+    top: 334px;
 
-    width: 70px;
+    width: 60px;
 
     height: 2px;
 
@@ -507,23 +503,17 @@ tbody tr:hover {
 .grand-final {
     position: relative;
 
-    min-height: 620px;
+    height: 620px;
 
     padding-top: 35px;
 }
 
-
-/*
-    Grand Final berada tepat pada
-    tengah garis connector
-*/
-
 .grand-match {
     position: absolute;
 
-    top: 288px;
-
     left: 50%;
+
+    top: 307px;
 
     width: 82%;
 
@@ -534,11 +524,12 @@ tbody tr:hover {
 
 
 /* ==================================================
-   QUALIFIED PLAYOFF TEAMS
+   QUALIFIED PLAYOFF
 ================================================== */
 
 .qualified-section {
     width: 100%;
+
     max-width: 1200px;
 
     margin: 70px auto 0;
@@ -708,9 +699,11 @@ footer {
 @media (max-width: 1000px) {
 
     .playoff-bracket {
-        grid-template-columns: 1fr;
+        height: auto;
 
-        min-height: auto;
+        display: grid;
+
+        grid-template-columns: 1fr;
 
         gap: 40px;
 
@@ -718,7 +711,7 @@ footer {
     }
 
     .semi-finals {
-        min-height: auto;
+        height: auto;
 
         padding-top: 0;
     }
@@ -740,7 +733,7 @@ footer {
     }
 
     .grand-final {
-        min-height: auto;
+        height: auto;
 
         padding-top: 0;
     }
