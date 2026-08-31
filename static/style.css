@@ -352,11 +352,13 @@ tbody tr:hover {
 
 
 /* ==========================================
-   SEMI FINAL
+   SEMI FINALS
 ========================================== */
 
 .semi-finals-round {
     position: relative;
+
+    width: 100%;
 }
 
 
@@ -388,6 +390,8 @@ tbody tr:hover {
     max-width: 420px;
 
     margin: 0 auto 65px;
+
+    position: relative;
 }
 
 
@@ -436,12 +440,52 @@ tbody tr:hover {
 
 /* ==========================================
    BRACKET LINES
-   SEMI 1 + SEMI 2 -> GRAND FINAL
 ========================================== */
 
 /*
-   Vertical line connecting the two
-   semi-final matches.
+   Semi Final 1
+   -> horizontal line
+*/
+
+.semi-match:nth-of-type(2)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 100%;
+
+    width: 60px;
+
+    border-top: 2px solid #007fcf;
+}
+
+
+/*
+   Semi Final 2
+   -> horizontal line
+*/
+
+.semi-match:nth-of-type(3)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 100%;
+
+    width: 60px;
+
+    border-top: 2px solid #007fcf;
+}
+
+
+/*
+   Vertical connector
+   between Semi Final 1
+   and Semi Final 2
 */
 
 .semi-finals-round::after {
@@ -449,24 +493,19 @@ tbody tr:hover {
 
     position: absolute;
 
-    right: -82px;
+    top: 185px;
 
-    top: 150px;
-
-    width: 40px;
+    right: -60px;
 
     height: 250px;
 
     border-right: 2px solid #007fcf;
-
-    border-top: 2px solid #007fcf;
-
-    border-bottom: 2px solid #007fcf;
 }
 
 
 /*
-   Horizontal connector into Grand Final.
+   Connector from middle
+   into Grand Final
 */
 
 .semi-finals-round::before {
@@ -474,11 +513,11 @@ tbody tr:hover {
 
     position: absolute;
 
-    right: -82px;
+    top: 310px;
 
-    top: 275px;
+    right: -120px;
 
-    width: 82px;
+    width: 120px;
 
     border-top: 2px solid #007fcf;
 }
@@ -489,9 +528,16 @@ tbody tr:hover {
 ========================================== */
 
 .grand-final-round {
-    padding-top: 125px;
-
     position: relative;
+
+    padding-top: 185px;
+
+    width: 100%;
+}
+
+
+.grand-final-round h2 {
+    margin-bottom: 8px;
 }
 
 
@@ -577,8 +623,8 @@ tbody tr:hover {
 
 
 /* ==========================================
-   THIRD PLACE
-   SEPARATE FROM MAIN BRACKET
+   THIRD PLACE MATCH
+   SEPARATE
 ========================================== */
 
 .third-place-section {
@@ -606,6 +652,8 @@ tbody tr:hover {
 
 
 .third-match {
+    max-width: 420px;
+
     margin: 25px auto 18px;
 
     text-align: left;
@@ -700,8 +748,16 @@ footer {
     }
 
 
+    /*
+       Hide bracket connectors
+       on smaller screens
+    */
+
     .semi-finals-round::before,
-    .semi-finals-round::after {
+    .semi-finals-round::after,
+
+    .semi-match:nth-of-type(2)::after,
+    .semi-match:nth-of-type(3)::after {
         display: none;
     }
 
