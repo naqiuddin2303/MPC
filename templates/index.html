@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>MPC</title>
+    <title>MPC - Home</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -19,9 +19,9 @@
 <body>
 
 
-<!-- ==========================================
+<!-- ==============================
      NAVIGATION
-========================================== -->
+============================== -->
 
 <nav>
 
@@ -29,9 +29,10 @@
         MPC
     </div>
 
+
     <div class="nav-links">
 
-        <a href="/">
+        <a href="/" class="active">
             HOME
         </a>
 
@@ -40,7 +41,7 @@
         </a>
 
         <a href="/playoff">
-            PLAYOFF STAGE
+            PLAYOFF
         </a>
 
         <a href="/moments">
@@ -52,25 +53,31 @@
 </nav>
 
 
-<!-- ==========================================
+
+<!-- ==============================
      HOME
-========================================== -->
+============================== -->
 
 <main class="home">
 
+
     <div class="home-content">
 
-        <div class="small-title">
+
+        <p class="small-title">
             MPC TOURNAMENT
-        </div>
+        </p>
+
 
         <h1>
             MPC
         </h1>
 
+
         <h2>
             PLAYER • MATCH • CHAMPION
         </h2>
+
 
         <p class="welcome">
             Selamat datang ke website MPC Tournament.
@@ -78,6 +85,7 @@
 
 
         <div class="home-buttons">
+
 
             <a href="/leaderboard"
                class="button">
@@ -90,7 +98,7 @@
             <a href="/playoff"
                class="button">
 
-                PLAYOFF STAGE
+                PLAYOFF
 
             </a>
 
@@ -102,11 +110,15 @@
 
             </a>
 
+
         </div>
+
 
     </div>
 
+
 </main>
+
 
 
 <footer>
@@ -117,5 +129,4 @@
 
 
 </body>
-
 </html>
