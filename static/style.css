@@ -26,6 +26,7 @@ body {
 
 nav {
     min-height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,20 +38,29 @@ nav {
     border-bottom: 1px solid #12345a;
 }
 
-.logo-text {
+.logo-text,
+.logo {
     color: #009dff;
+
     font-size: 30px;
     font-weight: 900;
+
     letter-spacing: 3px;
 }
 
-.nav-links {
+.nav-links,
+.menu {
     display: flex;
+
+    align-items: center;
+
     gap: 30px;
 }
 
-.nav-links a {
+.nav-links a,
+.menu a {
     color: #fff;
+
     text-decoration: none;
 
     font-size: 14px;
@@ -61,12 +71,14 @@ nav {
     transition: 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.menu a:hover {
     color: #009dff;
 }
 
 .nav-links a.active {
     color: #009dff;
+
     border-bottom: 3px solid #009dff;
 }
 
@@ -76,9 +88,10 @@ nav {
 ========================================== */
 
 .home {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 70px);
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -126,6 +139,7 @@ nav {
     margin-bottom: 20px;
 }
 
+.home p,
 .welcome {
     color: #aaa;
 
@@ -197,7 +211,7 @@ nav {
 
 
 /* ==========================================
-   HEADERS
+   PAGE HEADER
 ========================================== */
 
 .page-header,
@@ -234,6 +248,59 @@ nav {
    LEADERBOARD
 ========================================== */
 
+.leaderboard {
+    width: 94%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 25px 0 70px;
+}
+
+.leaderboard h1 {
+    background: #082d70;
+
+    border: 1px solid #075fa5;
+
+    text-align: center;
+
+    padding: 18px;
+
+    font-size: 34px;
+}
+
+.subtitle {
+    color: #009dff;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin: 20px 0;
+}
+
+.leaderboard section {
+    margin-top: 35px;
+}
+
+.leaderboard section h2 {
+    text-align: center;
+
+    background: #082d70;
+
+    border: 1px solid #075fa5;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
 .table-section {
     margin-bottom: 50px;
 }
@@ -268,6 +335,8 @@ th {
     border: 1px solid #164c76;
 
     padding: 15px;
+
+    color: #fff;
 }
 
 td {
@@ -276,6 +345,16 @@ td {
     padding: 13px;
 
     text-align: center;
+
+    color: #fff;
+}
+
+td.left {
+    text-align: left;
+}
+
+tbody tr:hover {
+    background: #031426;
 }
 
 tr:hover {
@@ -294,11 +373,11 @@ tr:hover {
 
     max-width: 1250px;
 
-    min-height: 560px;
+    min-height: 620px;
 
     margin: 0 auto;
 
-    padding: 50px 30px;
+    padding: 55px 0;
 
     display: grid;
 
@@ -307,7 +386,7 @@ tr:hover {
         180px
         minmax(0, 1fr);
 
-    align-items: center;
+    align-items: stretch;
 
     border: 1px solid #123e63;
 
@@ -315,13 +394,14 @@ tr:hover {
         radial-gradient(
             circle at center,
             #061a30 0%,
-            #000 65%
+            #02080f 45%,
+            #000 75%
         );
 }
 
 
 /* ==========================================
-   SEMI FINALS
+   SEMI FINALS COLUMN
 ========================================== */
 
 .semi-finals {
@@ -329,7 +409,13 @@ tr:hover {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 .semi-finals h2,
@@ -342,14 +428,19 @@ tr:hover {
 }
 
 .bo {
-    text-align: center;
-
     color: #777;
+
+    text-align: center;
 
     font-size: 13px;
 
     margin-bottom: 25px;
 }
+
+
+/* ==========================================
+   SEMI FINAL MATCHES
+========================================== */
 
 .semi-match {
     width: 100%;
@@ -357,6 +448,10 @@ tr:hover {
     max-width: 430px;
 
     margin: 0 auto 70px;
+
+    position: relative;
+
+    z-index: 10;
 }
 
 .semi-match:last-child {
@@ -400,92 +495,116 @@ tr:hover {
 }
 
 .team-row strong {
-    font-size: 17px;
-
     color: #fff;
+
+    font-size: 17px;
 }
 
 
 /* ==========================================
-   CONNECTING LINES
+   SEMI FINAL -> GRAND FINAL CONNECTOR
 ========================================== */
 
 .bracket-lines {
     position: relative;
 
-    height: 320px;
-
     width: 180px;
 
-    z-index: 1;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
 }
 
 
-/* line from semi 1 */
+/* ==========================================
+   TOP LINE
+   SEMI FINAL 1
+========================================== */
 
 .line-top {
     position: absolute;
 
     left: 0;
 
-    top: 55px;
+    top: 30%;
 
     width: 90px;
 
     height: 2px;
 
     background: #009dff;
+
+    box-shadow:
+        0 0 6px rgba(0, 157, 255, 0.6);
 }
 
 
-/* line from semi 2 */
+/* ==========================================
+   BOTTOM LINE
+   SEMI FINAL 2
+========================================== */
 
 .line-bottom {
     position: absolute;
 
     left: 0;
 
-    bottom: 55px;
+    top: 70%;
 
     width: 90px;
 
     height: 2px;
 
     background: #009dff;
+
+    box-shadow:
+        0 0 6px rgba(0, 157, 255, 0.6);
 }
 
 
-/* vertical connection */
+/* ==========================================
+   VERTICAL CONNECTOR
+========================================== */
 
 .line-middle {
     position: absolute;
 
     left: 90px;
 
-    top: 55px;
+    top: 30%;
 
     width: 2px;
 
-    height: 210px;
+    height: 40%;
 
     background: #009dff;
+
+    box-shadow:
+        0 0 6px rgba(0, 157, 255, 0.6);
 }
 
 
-/* line going to grand final */
+/* ==========================================
+   LINE INTO GRAND FINAL
+========================================== */
 
 .line-final {
     position: absolute;
 
     left: 90px;
 
-    top: 160px;
+    top: 50%;
 
     width: 90px;
 
     height: 2px;
 
     background: #009dff;
+
+    box-shadow:
+        0 0 6px rgba(0, 157, 255, 0.6);
 }
 
 
@@ -498,7 +617,13 @@ tr:hover {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 .grand-match {
@@ -512,6 +637,7 @@ tr:hover {
 
 /* ==========================================
    THIRD PLACE
+   COMPLETELY SEPARATE
 ========================================== */
 
 .third-place-section {
@@ -585,10 +711,12 @@ tr:hover {
 }
 
 .qualified-grid {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 18px;
 }
@@ -689,17 +817,29 @@ footer {
     .playoff-bracket {
         grid-template-columns: 1fr;
 
-        gap: 30px;
+        gap: 40px;
 
-        padding: 40px 25px;
+        padding: 45px 25px;
+
+        min-height: auto;
     }
 
     .bracket-lines {
         display: none;
     }
 
+    .semi-finals {
+        display: block;
+    }
+
     .semi-match {
         max-width: 600px;
+
+        margin-bottom: 35px;
+    }
+
+    .grand-final {
+        display: block;
     }
 
     .grand-match {
@@ -708,7 +848,7 @@ footer {
 
     .qualified-grid {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -727,7 +867,8 @@ footer {
         padding: 15px;
     }
 
-    .nav-links {
+    .nav-links,
+    .menu {
         gap: 15px;
 
         flex-wrap: wrap;
@@ -735,23 +876,63 @@ footer {
         justify-content: center;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .menu a {
         padding: 7px 0;
 
         font-size: 11px;
     }
 
+    .home {
+        min-height: calc(100vh - 120px);
+    }
+
+    .home-content {
+        padding: 25px 15px;
+    }
+
     .home h1 {
         font-size: 55px;
+
+        letter-spacing: 6px;
     }
 
     .home h2 {
         font-size: 15px;
+
+        letter-spacing: 1px;
+    }
+
+    .home p,
+    .welcome {
+        font-size: 14px;
     }
 
     .page-header h1,
     .playoff-header h1 {
         font-size: 25px;
+    }
+
+    .playoff-bracket {
+        padding: 30px 15px;
+    }
+
+    .semi-finals h2,
+    .grand-final h2,
+    .third-place-section h2 {
+        font-size: 19px;
+    }
+
+    .team-row {
+        min-height: 50px;
+
+        padding: 0 12px;
+
+        font-size: 13px;
+    }
+
+    .team-row strong {
+        font-size: 15px;
     }
 
     .qualified-grid {
@@ -762,11 +943,7 @@ footer {
         padding: 20px;
     }
 
-    .team-row {
-        min-height: 50px;
-
-        padding: 0 12px;
-
-        font-size: 13px;
+    .note-box {
+        padding: 20px;
     }
 }
