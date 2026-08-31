@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>MPC - Playoff Stage</title>
+    <title>MPC - Playoff</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -19,15 +19,16 @@
 <body>
 
 
-<!-- ==========================================
+<!-- ==============================
      NAVIGATION
-========================================== -->
+============================== -->
 
 <nav>
 
     <div class="logo-text">
         MPC
     </div>
+
 
     <div class="nav-links">
 
@@ -42,7 +43,7 @@
         <a href="/playoff"
            class="active">
 
-            PLAYOFF STAGE
+            PLAYOFF
 
         </a>
 
@@ -55,9 +56,6 @@
 </nav>
 
 
-<!-- ==========================================
-     MAIN
-========================================== -->
 
 <main class="page-container">
 
@@ -68,6 +66,7 @@
         ← KEMBALI
 
     </a>
+
 
 
     <header class="playoff-header">
@@ -83,36 +82,35 @@
     </header>
 
 
-    <!-- ======================================
+
+    <!-- =================================================
          MAIN BRACKET
-    ======================================= -->
+    ================================================== -->
 
     <section class="playoff-bracket">
 
 
-        <!-- ==================================
+        <!-- ==========================
              SEMI FINALS
-        =================================== -->
+        =========================== -->
 
-        <div class="semi-finals">
+        <div class="semi-column">
 
 
-            <div class="round-title">
+            <h2>
+                SEMI FINALS
+            </h2>
 
-                <h2>
-                    SEMI FINALS
-                </h2>
 
-                <span>
-                    BO3
-                </span>
+            <p class="bo">
+                BO3
+            </p>
 
-            </div>
 
 
             <!-- SEMI FINAL 1 -->
 
-            <div class="semi-match semi-match-1">
+            <div class="bracket-match">
 
                 <div class="match">
 
@@ -146,9 +144,10 @@
             </div>
 
 
+
             <!-- SEMI FINAL 2 -->
 
-            <div class="semi-match semi-match-2">
+            <div class="bracket-match">
 
                 <div class="match">
 
@@ -181,46 +180,48 @@
 
             </div>
 
+
         </div>
 
 
-        <!-- ==================================
+
+        <!-- ==========================
              CONNECTOR
-        =================================== -->
+        =========================== -->
 
-        <div class="bracket-lines">
+        <div class="connector-area">
 
-            <div class="line-top"></div>
+            <div class="connector-line top-line"></div>
 
-            <div class="line-bottom"></div>
+            <div class="connector-line bottom-line"></div>
 
-            <div class="line-vertical"></div>
+            <div class="connector-vertical"></div>
 
-            <div class="line-to-final"></div>
+            <div class="connector-to-final"></div>
 
         </div>
 
 
-        <!-- ==================================
+
+        <!-- ==========================
              GRAND FINAL
-        =================================== -->
+        =========================== -->
 
-        <div class="grand-final">
+        <div class="grand-column">
 
-            <div class="round-title">
 
-                <h2>
-                    GRAND FINALS
-                </h2>
+            <h2>
+                GRAND FINAL
+            </h2>
 
-                <span>
-                    BO5
-                </span>
 
-            </div>
+            <p class="bo">
+                BO5
+            </p>
 
 
             <div class="grand-match">
+
 
                 <div class="match">
 
@@ -251,7 +252,9 @@
 
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -259,11 +262,13 @@
     </section>
 
 
-    <!-- ======================================
+
+    <!-- =================================================
          QUALIFIED TEAMS
-    ======================================= -->
+    ================================================== -->
 
     <section class="qualified-section">
+
 
         <h2>
             QUALIFIED PLAYOFF TEAMS
@@ -272,49 +277,62 @@
 
         <div class="qualified-grid">
 
+
             {% for team in playoff_teams %}
+
 
             <div class="qualified-card">
 
+
                 <span class="rank">
+
                     {{ loop.index }}
+
                 </span>
 
+
                 <span class="team-name">
+
                     {{ team }}
+
                 </span>
+
 
             </div>
 
+
             {% endfor %}
 
+
         </div>
+
 
     </section>
 
 
-    <!-- ======================================
+
+    <!-- =================================================
          THIRD PLACE
-    ======================================= -->
+    ================================================== -->
 
     <section class="third-place-section">
 
-        <div class="round-title">
 
-            <h2>
-                THIRD PLACE MATCH
-            </h2>
+        <h2>
+            THIRD PLACE MATCH
+        </h2>
 
-            <span>
-                BO3
-            </span>
 
-        </div>
+        <p class="bo">
+            BO3
+        </p>
 
 
         <div class="third-match">
 
+
             <div class="match">
+
 
                 <div class="team-row">
 
@@ -341,7 +359,9 @@
 
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -352,27 +372,33 @@
 
         </div>
 
+
     </section>
 
 
-    <!-- ======================================
+
+    <!-- =================================================
          NOTE
-    ======================================= -->
+    ================================================== -->
 
     <section class="note-box">
+
 
         <h2>
             NOTE
         </h2>
 
+
         <p>
             All matches are played in Best of format (BO).
         </p>
+
 
     </section>
 
 
 </main>
+
 
 
 <footer>
@@ -383,5 +409,4 @@
 
 
 </body>
-
 </html>
