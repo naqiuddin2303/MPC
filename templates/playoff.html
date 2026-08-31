@@ -2,17 +2,13 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MPC - Playoff Stage</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 
 <body>
@@ -62,16 +58,16 @@
     </header>
 
 
-    <!-- ======================================
-         MAIN BRACKET
-    ======================================= -->
+    <!-- ==========================================
+         MAIN PLAYOFF BRACKET
+    =========================================== -->
 
     <section class="playoff-bracket">
 
 
-        <!-- ==================================
+        <!-- ======================================
              SEMI FINALS
-        =================================== -->
+        ======================================= -->
 
         <div class="semi-finals">
 
@@ -101,6 +97,7 @@
                         </strong>
 
                     </div>
+
 
                     <div class="team-row">
 
@@ -137,6 +134,7 @@
 
                     </div>
 
+
                     <div class="team-row">
 
                         <span>
@@ -156,26 +154,26 @@
         </div>
 
 
-        <!-- ==================================
+        <!-- ======================================
              CONNECTOR
-        =================================== -->
+        ======================================= -->
 
-        <div class="bracket-connector">
+        <div class="bracket-lines">
 
-            <div class="connector-top"></div>
+            <div class="line-top"></div>
 
-            <div class="connector-bottom"></div>
+            <div class="line-bottom"></div>
 
-            <div class="connector-vertical"></div>
+            <div class="line-vertical"></div>
 
-            <div class="connector-middle"></div>
+            <div class="line-final"></div>
 
         </div>
 
 
-        <!-- ==================================
+        <!-- ======================================
              GRAND FINAL
-        =================================== -->
+        ======================================= -->
 
         <div class="grand-final">
 
@@ -204,6 +202,7 @@
 
                     </div>
 
+
                     <div class="team-row">
 
                         <span>
@@ -225,9 +224,9 @@
     </section>
 
 
-    <!-- ======================================
+    <!-- ==========================================
          THIRD PLACE MATCH
-    ======================================= -->
+    =========================================== -->
 
     <section class="third-place-section">
 
@@ -256,6 +255,7 @@
 
                 </div>
 
+
                 <div class="team-row">
 
                     <span>
@@ -280,10 +280,9 @@
     </section>
 
 
-    <!-- ======================================
-         QUALIFIED PLAYOFF TEAMS
-         4 TEAM SAHAJA
-    ======================================= -->
+    <!-- ==========================================
+         QUALIFIED TEAMS
+    =========================================== -->
 
     <section class="qualified-section">
 
@@ -315,9 +314,9 @@
     </section>
 
 
-    <!-- ======================================
+    <!-- ==========================================
          NOTE
-    ======================================= -->
+    =========================================== -->
 
     <section class="note-box">
 
@@ -326,8 +325,7 @@
         </h2>
 
         <p>
-            Semi Finals are BO3 and Grand Final is BO5.
-            Third Place Match is BO3.
+            All matches are played in Best of format (BO).
         </p>
 
     </section>
@@ -338,6 +336,7 @@
 <footer>
     © 2026 MPC TOURNAMENT
 </footer>
+
 
 </body>
 </html>
