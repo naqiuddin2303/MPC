@@ -24,7 +24,6 @@
         MPC
     </div>
 
-
     <div class="nav-links">
 
         <a href="/">
@@ -35,11 +34,8 @@
             LEADERBOARD
         </a>
 
-        <a href="/playoff"
-           class="active">
-
+        <a href="/playoff" class="active">
             PLAYOFF STAGE
-
         </a>
 
     </div>
@@ -68,14 +64,18 @@
     </header>
 
 
-    <section class="playoff-board">
+    <!-- =====================================
+         MAIN BRACKET
+    ====================================== -->
+
+    <section class="playoff-bracket">
 
 
-        <!-- ==================================
+        <!-- ================================
              SEMI FINALS
-        =================================== -->
+        ================================= -->
 
-        <div class="bracket-column semi-column">
+        <div class="bracket-round semi-finals-round">
 
             <h2>
                 SEMI FINALS
@@ -88,7 +88,7 @@
 
             {% for match in semi_finals %}
 
-            <div class="match">
+            <div class="match semi-match">
 
                 <div class="team-row">
 
@@ -122,11 +122,11 @@
         </div>
 
 
-        <!-- ==================================
+        <!-- ================================
              GRAND FINAL
-        =================================== -->
+        ================================= -->
 
-        <div class="bracket-column grand-column">
+        <div class="bracket-round grand-final-round">
 
             <h2>
                 GRAND FINALS
@@ -169,18 +169,18 @@
         </div>
 
 
-        <!-- ==================================
+        <!-- ================================
              QUALIFIED TEAMS
-        =================================== -->
+        ================================= -->
 
-        <div class="qualified-column">
+        <div class="qualified-round">
 
             <h2>
                 QUALIFIED PLAYOFF TEAMS
             </h2>
 
 
-            <div class="qualified-list">
+            <div class="qualified-grid">
 
                 {% for team in playoff_teams %}
 
@@ -206,6 +206,65 @@
     </section>
 
 
+    <!-- =====================================
+         THIRD PLACE
+         BERASINGAN
+    ====================================== -->
+
+    <section class="third-place-section">
+
+        <h2>
+            THIRD PLACE MATCH
+        </h2>
+
+        <p class="bo">
+            BO3
+        </p>
+
+
+        <div class="match third-match">
+
+            <div class="team-row">
+
+                <span>
+                    {{ third_place.team1 }}
+                </span>
+
+                <strong>
+                    {{ third_place.score1 }}
+                </strong>
+
+            </div>
+
+
+            <div class="team-row">
+
+                <span>
+                    {{ third_place.team2 }}
+                </span>
+
+                <strong>
+                    {{ third_place.score2 }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="third-result">
+
+            WINNER GETS 3RD PLACE
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTE
+    ====================================== -->
+
     <section class="note-box">
 
         <h2>
@@ -223,9 +282,7 @@
 
 
 <footer>
-
     © 2026 MPC TOURNAMENT
-
 </footer>
 
 
