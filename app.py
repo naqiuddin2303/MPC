@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 # ==========================================
-# PLAYER LEADERBOARD - 30 PLAYERS
+# PLAYER LEADERBOARD
 # ==========================================
 
 players = [
@@ -42,7 +42,7 @@ players = [
 
 
 # ==========================================
-# TEAM STATISTICS - 6 TEAMS
+# TEAM STATISTICS
 # ==========================================
 
 teams = [
@@ -56,7 +56,7 @@ teams = [
 
 
 # ==========================================
-# QUALIFIED PLAYOFF TEAMS - 4 TEAMS
+# QUALIFIED PLAYOFF TEAMS
 # ==========================================
 
 playoff_teams = [
@@ -100,6 +100,18 @@ grand_final = {
 
 
 # ==========================================
+# THIRD PLACE MATCH
+# ==========================================
+
+third_place = {
+    "team1": "Guangzhou Gaming",
+    "score1": 2,
+    "team2": "True Rippers",
+    "score2": 1
+}
+
+
+# ==========================================
 # HOME
 # ==========================================
 
@@ -131,6 +143,7 @@ def playoff():
         "playoff.html",
         semi_finals=semi_finals,
         grand_final=grand_final,
+        third_place=third_place,
         playoff_teams=playoff_teams
     )
 
