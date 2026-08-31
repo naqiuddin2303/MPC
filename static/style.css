@@ -17,7 +17,12 @@ html {
 body {
     background: #000;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     min-height: 100vh;
 }
 
@@ -28,6 +33,7 @@ body {
 
 nav {
     width: 100%;
+
     min-height: 70px;
 
     background: #000;
@@ -35,7 +41,9 @@ nav {
     border-bottom: 1px solid #12345a;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 4%;
@@ -46,14 +54,18 @@ nav {
     color: #009dff;
 
     font-size: 30px;
+
     font-weight: 900;
+
     letter-spacing: 2px;
 }
 
 
 .nav-links {
     display: flex;
+
     align-items: center;
+
     gap: 35px;
 }
 
@@ -64,6 +76,7 @@ nav {
     text-decoration: none;
 
     font-size: 15px;
+
     font-weight: bold;
 
     padding: 25px 0;
@@ -89,10 +102,13 @@ nav {
 ========================================== */
 
 .home {
-    min-height: calc(100vh - 120px);
+    min-height:
+        calc(100vh - 120px);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -109,6 +125,7 @@ nav {
 
 .home-content {
     max-width: 900px;
+
     padding: 40px;
 }
 
@@ -117,6 +134,7 @@ nav {
     color: #009dff;
 
     font-size: 16px;
+
     font-weight: bold;
 
     letter-spacing: 4px;
@@ -343,7 +361,7 @@ tbody tr:hover {
 
     width: 100%;
 
-    min-height: 650px;
+    min-height: 600px;
 
     padding: 55px 45px;
 
@@ -353,7 +371,8 @@ tbody tr:hover {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr 1fr;
 
     gap: 70px;
 
@@ -388,7 +407,7 @@ tbody tr:hover {
 
 
 /* ==========================================
-   MATCH BOX
+   MATCH
 ========================================== */
 
 .match {
@@ -441,10 +460,8 @@ tbody tr:hover {
 
 
 /* ==========================================
-   BRACKET CONNECTING LINES
+   CONNECTING LINE
 ========================================== */
-
-/* Lines only between Semi Finals and Grand Final */
 
 .semi-column::after {
     content: "";
@@ -452,12 +469,15 @@ tbody tr:hover {
     position: absolute;
 
     width: 35px;
+
     height: 170px;
 
     right: -52px;
+
     top: 110px;
 
-    border-right: 1px solid #007fcf;
+    border-right:
+        1px solid #007fcf;
 }
 
 
@@ -469,9 +489,11 @@ tbody tr:hover {
     width: 35px;
 
     right: -52px;
+
     top: 195px;
 
-    border-top: 1px solid #007fcf;
+    border-top:
+        1px solid #007fcf;
 }
 
 
@@ -526,7 +548,8 @@ tbody tr:hover {
 
     background: #082d70;
 
-    border-right: 1px solid #164c76;
+    border-right:
+        1px solid #164c76;
 
     font-size: 20px;
 
@@ -571,63 +594,6 @@ tbody tr:hover {
 
 .note-box p {
     color: #aaa;
-}
-
-
-/* ==========================================
-   MOMENTS
-========================================== */
-
-.moments-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.moment-card {
-    background: #000;
-
-    border: 1px solid #164c76;
-
-    overflow: hidden;
-}
-
-
-.moment-card video {
-    width: 100%;
-
-    display: block;
-
-    background: #000;
-
-    aspect-ratio: 16 / 9;
-}
-
-
-.moment-info {
-    padding: 20px;
-}
-
-
-.moment-info h2 {
-    color: #009dff;
-
-    margin-bottom: 10px;
-
-    font-size: 20px;
-}
-
-
-.moment-info p {
-    color: #aaa;
-
-    font-size: 14px;
-
-    line-height: 1.5;
 }
 
 
@@ -703,11 +669,6 @@ footer {
     .semi-column::before,
     .semi-column::after {
         display: none;
-    }
-
-
-    .moments-grid {
-        grid-template-columns: 1fr;
     }
 
 
