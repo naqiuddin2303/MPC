@@ -25,11 +25,15 @@ body {
 ========================================== */
 
 nav {
+    width: 100%;
     min-height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 4%;
+
     background: #000;
     border-bottom: 1px solid #12345a;
 }
@@ -45,6 +49,7 @@ nav {
 .nav-links,
 .menu {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
@@ -52,9 +57,13 @@ nav {
 .menu a {
     color: #fff;
     text-decoration: none;
+
     font-size: 14px;
     font-weight: bold;
+
     padding: 25px 0;
+
+    transition: 0.2s;
 }
 
 .nav-links a:hover,
@@ -73,6 +82,7 @@ nav {
 ========================================== */
 
 .home {
+    width: 100%;
     min-height: calc(100vh - 70px);
 
     display: flex;
@@ -110,6 +120,7 @@ nav {
 .home p,
 .welcome {
     color: #aaa;
+    font-size: 17px;
     margin-bottom: 30px;
 }
 
@@ -125,6 +136,8 @@ nav {
     text-decoration: none;
 
     font-weight: bold;
+
+    transition: 0.2s;
 }
 
 .button:hover {
@@ -140,14 +153,19 @@ nav {
 .page-container {
     width: 94%;
     max-width: 1500px;
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 25px 0 70px;
 }
 
 .back {
     display: inline-block;
+
     color: #009dff;
+
     text-decoration: none;
+
     margin-bottom: 20px;
 }
 
@@ -155,25 +173,41 @@ nav {
     text-decoration: underline;
 }
 
+
+/* ==========================================
+   PLAYOFF HEADER
+========================================== */
+
 .playoff-header,
 .page-header {
+    width: 100%;
+
     text-align: center;
-    margin-bottom: 45px;
+
+    margin-bottom: 55px;
 }
 
 .playoff-header h1,
 .page-header h1 {
+    width: 100%;
+
     background: #082d70;
+
     border: 1px solid #075fa5;
+
     padding: 18px;
+
     font-size: 34px;
 }
 
 .playoff-header p,
 .page-header p {
     color: #009dff;
+
     margin-top: 14px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
 }
 
@@ -185,22 +219,33 @@ nav {
 .leaderboard {
     width: 94%;
     max-width: 1500px;
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 25px 0 70px;
 }
 
 .leaderboard h1 {
+    width: 100%;
+
     background: #082d70;
+
     border: 1px solid #075fa5;
+
     text-align: center;
+
     padding: 18px;
+
     font-size: 34px;
 }
 
 .subtitle {
     color: #009dff;
+
     font-weight: bold;
+
     letter-spacing: 3px;
+
     margin: 20px 0;
 }
 
@@ -210,9 +255,13 @@ nav {
 
 .leaderboard section h2 {
     text-align: center;
+
     background: #082d70;
+
     border: 1px solid #075fa5;
+
     padding: 16px;
+
     margin-bottom: 20px;
 }
 
@@ -223,19 +272,32 @@ nav {
 
 table {
     width: 100%;
+
     border-collapse: collapse;
+
+    background: #000;
 }
 
 th {
     background: #082d70;
+
     border: 1px solid #164c76;
+
     padding: 15px;
+
+    color: #fff;
 }
 
 td {
+    background: #000;
+
     border: 1px solid #15334e;
+
     padding: 13px;
+
     text-align: center;
+
+    color: #fff;
 }
 
 tbody tr:hover,
@@ -248,56 +310,86 @@ td.left {
 }
 
 
-/* ==========================================
-   PLAYOFF BRACKET
-========================================== */
+/* ==========================================================
+   ==========================================================
+                     PLAYOFF BRACKET
+   ==========================================================
+   ========================================================== */
 
 .bracket {
-    width: 100%;
-    max-width: 1200px;
+    position: relative;
 
-    margin: 50px auto 0;
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 500px;
+
+    margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        120px
-        minmax(0, 1fr);
+    /*
+       COLUMN 1 = SEMI FINALS
+       COLUMN 2 = GARISAN
+       COLUMN 3 = GRAND FINAL
+    */
 
-    align-items: center;
+    grid-template-columns:
+        440px
+        180px
+        440px;
+
+    column-gap: 0;
+
+    align-items: start;
+
+    overflow: visible;
+}
+
+
+/* ==========================================
+   SEMI FINAL COLUMN
+========================================== */
+
+.semi-column {
+    position: relative;
+
+    width: 440px;
+
+    min-height: 430px;
+
+    padding-top: 0;
+}
+
+.semi-column h2 {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.semi-column .bo {
+    margin-bottom: 28px;
+}
+
+
+/* ==========================================
+   SEMI FINAL MATCH
+========================================== */
+
+.bracket-match {
+    width: 400px;
+
+    margin: 0 auto;
 
     position: relative;
 }
 
-
-/* ==========================================
-   SEMI FINALS
-========================================== */
-
-.semi-column {
-    width: 100%;
-    min-width: 0;
-}
-
-.semi-column h2,
-.grand-column h2 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 5px;
-}
-
-.bo {
-    text-align: center;
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.bracket-match {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto 75px;
+.bracket-match:first-of-type {
+    margin-bottom: 75px;
 }
 
 .bracket-match:last-child {
@@ -311,20 +403,32 @@ td.left {
 
 .match {
     width: 100%;
+
     background: #000;
+
     border: 1px solid #075fa5;
+
+    overflow: hidden;
 }
 
 .team-row {
+    width: 100%;
+
     min-height: 55px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 18px;
 
+    background: #000;
+
     border-bottom: 1px solid #164c76;
+
+    color: #fff;
 
     font-size: 14px;
 }
@@ -335,58 +439,111 @@ td.left {
 
 .team-row strong {
     font-size: 17px;
+
     color: #fff;
 }
 
 
 /* ==========================================
-   CONNECTOR
+   BLUE WINNER ROW
 ========================================== */
+
+.team-row.winner {
+    background: #082d70;
+
+    border-left: 4px solid #009dff;
+}
+
+
+/* ==========================================================
+   BRACKET CONNECTOR
+   SEMI FINAL 1
+          \
+           > GRAND FINAL
+          /
+   SEMI FINAL 2
+   ========================================================== */
 
 .bracket-connector {
     position: relative;
 
-    width: 120px;
-    height: 300px;
+    width: 180px;
 
-    margin: 0 auto;
+    height: 430px;
+
+    display: block;
 }
+
+
+/* ------------------------------------------
+   TOP HORIZONTAL LINE
+   Semi Final 1 -> vertical
+------------------------------------------ */
 
 .connector-top {
     position: absolute;
 
     left: 0;
-    top: 65px;
 
-    width: 60px;
+    /*
+       Match pertama berada sekitar
+       95px dari atas bracket.
+    */
+
+    top: 110px;
+
+    width: 90px;
+
     height: 2px;
 
     background: #009dff;
 }
+
+
+/* ------------------------------------------
+   BOTTOM HORIZONTAL LINE
+   Semi Final 2 -> vertical
+------------------------------------------ */
 
 .connector-bottom {
     position: absolute;
 
     left: 0;
-    bottom: 65px;
 
-    width: 60px;
+    top: 315px;
+
+    width: 90px;
+
     height: 2px;
 
     background: #009dff;
 }
 
+
+/* ------------------------------------------
+   VERTICAL LINE
+   Sambungkan TOP dan BOTTOM
+------------------------------------------ */
+
 .connector-middle {
     position: absolute;
 
-    left: 60px;
-    top: 65px;
+    left: 90px;
+
+    top: 110px;
 
     width: 2px;
-    height: 170px;
+
+    height: 207px;
 
     background: #009dff;
 }
+
+
+/* ------------------------------------------
+   MIDDLE LINE
+   Vertical -> Grand Final
+------------------------------------------ */
 
 .connector-middle::after {
     content: "";
@@ -394,9 +551,11 @@ td.left {
     position: absolute;
 
     left: 0;
-    top: 85px;
 
-    width: 60px;
+    top: 103px;
+
+    width: 90px;
+
     height: 2px;
 
     background: #009dff;
@@ -408,24 +567,61 @@ td.left {
 ========================================== */
 
 .grand-column {
+    position: relative;
+
+    width: 440px;
+
+    min-height: 430px;
+
+    /*
+       Tolak Grand Final sedikit ke bawah
+       supaya center dengan connector.
+    */
+
+    padding-top: 110px;
+}
+
+.grand-column h2 {
     width: 100%;
-    min-width: 0;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.grand-column .bo {
+    margin-bottom: 28px;
 }
 
 .grand-match {
-    width: 100%;
-    max-width: 420px;
+    width: 400px;
+
     margin: 0 auto;
 }
 
 
 /* ==========================================
-   QUALIFIED TEAMS
+   BO TEXT
 ========================================== */
+
+.bo {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   QUALIFIED PLAYOFF TEAMS
+   ========================================================== */
 
 .qualified-section {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1250px;
 
     margin: 70px auto 0;
 
@@ -436,7 +632,9 @@ td.left {
 
 .qualified-section h2 {
     text-align: center;
+
     font-size: 22px;
+
     margin-bottom: 25px;
 }
 
@@ -455,6 +653,7 @@ td.left {
     min-height: 65px;
 
     display: flex;
+
     align-items: center;
 
     background: #000;
@@ -464,12 +663,15 @@ td.left {
 
 .rank {
     width: 58px;
+
     height: 65px;
 
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #082d70;
@@ -477,19 +679,23 @@ td.left {
     border-right: 1px solid #164c76;
 
     font-size: 20px;
+
     font-weight: bold;
 }
 
 .team-name {
     padding-left: 15px;
+
     font-size: 14px;
+
     font-weight: bold;
 }
 
 
-/* ==========================================
-   THIRD PLACE
-========================================== */
+/* ==========================================================
+   THIRD PLACE MATCH
+   BERASINGAN DARI BRACKET
+   ========================================================== */
 
 .third-place-section {
     width: 100%;
@@ -508,12 +714,18 @@ td.left {
 
 .third-place-section h2 {
     font-size: 22px;
-    margin-bottom: 5px;
+
+    margin-bottom: 6px;
+}
+
+.third-place-section .bo {
+    margin-bottom: 25px;
 }
 
 .third-match {
     width: 100%;
-    margin: 25px auto 18px;
+
+    margin: 0 auto 18px;
 
     text-align: left;
 }
@@ -526,13 +738,14 @@ td.left {
     color: #009dff;
 
     font-size: 13px;
+
     font-weight: bold;
 }
 
 
-/* ==========================================
+/* ==========================================================
    NOTE
-========================================== */
+   ========================================================== */
 
 .note-box {
     width: 100%;
@@ -545,10 +758,13 @@ td.left {
     border: 1px solid #164c76;
 
     text-align: center;
+
+    background: #000;
 }
 
 .note-box h2 {
     color: #009dff;
+
     margin-bottom: 10px;
 }
 
@@ -557,11 +773,13 @@ td.left {
 }
 
 
-/* ==========================================
+/* ==========================================================
    FOOTER
-========================================== */
+   ========================================================== */
 
 footer {
+    width: 100%;
+
     text-align: center;
 
     padding: 25px;
@@ -569,74 +787,199 @@ footer {
     color: #777;
 
     border-top: 1px solid #102c45;
+
+    margin-top: 50px;
 }
 
 
-/* ==========================================
-   MOBILE
-========================================== */
+/* ==========================================================
+   TABLET
+   ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
 
     .bracket {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns:
+            minmax(300px, 1fr)
+            120px
+            minmax(300px, 1fr);
+
+        max-width: 1000px;
     }
 
-    .bracket-connector {
-        display: none;
+    .semi-column,
+    .grand-column {
+        width: 100%;
     }
 
     .bracket-match,
     .grand-match {
-        max-width: 500px;
+        width: 90%;
+    }
+
+    .bracket-connector {
+        width: 120px;
+    }
+
+    .connector-top,
+    .connector-bottom {
+        width: 55px;
+    }
+
+    .connector-middle {
+        left: 55px;
+    }
+
+    .connector-middle::after {
+        width: 65px;
     }
 
     .qualified-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 }
 
 
-@media (max-width: 600px) {
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 800px) {
 
     nav {
+        min-height: auto;
+
         flex-direction: column;
+
         gap: 10px;
+
         padding: 15px;
     }
 
     .nav-links,
     .menu {
         gap: 15px;
+
         flex-wrap: wrap;
+
         justify-content: center;
     }
 
     .nav-links a,
     .menu a {
         padding: 7px 0;
+
         font-size: 11px;
     }
 
+
     .home h1 {
         font-size: 55px;
+
+        letter-spacing: 6px;
     }
 
     .home h2 {
         font-size: 15px;
     }
 
+
     .playoff-header h1,
     .page-header h1 {
         font-size: 25px;
     }
 
+
+    /*
+       MOBILE:
+       bracket jadi menegak.
+       Garisan disembunyikan supaya
+       tak rosak pada skrin kecil.
+    */
+
+    .bracket {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 45px;
+
+        min-height: auto;
+    }
+
+    .semi-column,
+    .grand-column {
+        width: 100%;
+
+        min-height: auto;
+
+        padding-top: 0;
+    }
+
+    .bracket-match,
+    .grand-match {
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+    .bracket-connector {
+        display: none;
+    }
+
+
     .qualified-grid {
         grid-template-columns: 1fr;
     }
 
+
     .third-place-section {
         padding: 20px;
+    }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 500px) {
+
+    .page-container,
+    .leaderboard {
+        width: 92%;
+    }
+
+    .home h1 {
+        font-size: 45px;
+    }
+
+    .home h2 {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .team-row {
+        min-height: 50px;
+
+        padding: 0 12px;
+
+        font-size: 13px;
+    }
+
+    .team-row strong {
+        font-size: 15px;
+    }
+
+    .qualified-card {
+        min-height: 58px;
+    }
+
+    .rank {
+        width: 50px;
+        height: 58px;
     }
 }
