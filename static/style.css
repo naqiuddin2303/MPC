@@ -16,6 +16,7 @@ html {
 
 body {
     background: #000;
+
     color: #fff;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -91,113 +92,6 @@ nav {
 
 
 /* ==========================================
-   HOME
-========================================== */
-
-.home {
-    min-height: calc(100vh - 120px);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle,
-            #061a30 0%,
-            #02080f 40%,
-            #000 75%
-        );
-}
-
-
-.home-content {
-    padding: 40px;
-}
-
-
-.small-title {
-    color: #009dff;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-}
-
-
-.home h1 {
-    font-size: 100px;
-
-    letter-spacing: 10px;
-
-    margin-bottom: 10px;
-}
-
-
-.home h2 {
-    color: #009dff;
-
-    font-size: 23px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-}
-
-
-.welcome {
-    color: #aaa;
-
-    font-size: 17px;
-
-    margin-bottom: 35px;
-}
-
-
-.home-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-
-.button {
-    display: inline-block;
-
-    padding: 14px 28px;
-
-    color: #fff;
-
-    border: 1px solid #009dff;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-
-.button:hover {
-    background: #082d70;
-
-    color: #00aaff;
-}
-
-
-/* ==========================================
    GENERAL PAGE
 ========================================== */
 
@@ -228,15 +122,17 @@ nav {
 }
 
 
-.page-header,
+/* ==========================================
+   PLAYOFF HEADER
+========================================== */
+
 .playoff-header {
     text-align: center;
 
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 
-.page-header h1,
 .playoff-header h1 {
     background: #082d70;
 
@@ -248,7 +144,6 @@ nav {
 }
 
 
-.page-header p,
 .playoff-header p {
     color: #009dff;
 
@@ -261,115 +156,46 @@ nav {
 
 
 /* ==========================================
-   TABLE
+   BRACKET WRAPPER
 ========================================== */
 
-.table-section {
-    margin-bottom: 50px;
-}
+.bracket-wrapper {
 
-
-.table-section h2 {
-    text-align: center;
-
-    background: #082d70;
-
-    border: 1px solid #075fa5;
-
-    padding: 16px;
-
-    margin-bottom: 20px;
-}
-
-
-.table-container {
     width: 100%;
 
-    overflow-x: auto;
-}
+    min-height: 560px;
 
-
-table {
-    width: 100%;
-
-    border-collapse: collapse;
-}
-
-
-th {
-    background: #082d70;
-
-    border: 1px solid #164c76;
-
-    padding: 15px;
-}
-
-
-td {
-    border: 1px solid #15334e;
-
-    padding: 13px;
-
-    text-align: center;
-}
-
-
-td.left {
-    text-align: left;
-}
-
-
-tbody tr:hover {
-    background: #031426;
-}
-
-
-/* ==========================================
-   PLAYOFF MAIN BRACKET
-========================================== */
-
-.playoff-bracket {
     position: relative;
 
-    width: 100%;
+    display: grid;
 
-    min-height: 620px;
+    grid-template-columns: 42% 16% 42%;
 
-    padding: 60px 45px;
+    align-items: center;
 
     border: 1px solid #123e63;
 
     background: #000;
 
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    column-gap: 120px;
-
-    align-items: start;
+    padding: 50px 40px;
 }
 
 
 /* ==========================================
-   SEMI FINALS
+   ROUND
 ========================================== */
 
-.semi-finals-round {
-    position: relative;
-
+.round {
     width: 100%;
 }
 
 
-.semi-finals-round h2,
-.grand-final-round h2,
-.qualified-round h2 {
+.round h2 {
     text-align: center;
 
     font-size: 21px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 
@@ -384,27 +210,51 @@ tbody tr:hover {
 }
 
 
-.semi-match {
-    width: 100%;
+/* ==========================================
+   SEMI FINALS
+========================================== */
 
-    max-width: 420px;
+.semi-round {
+    height: 100%;
 
-    margin: 0 auto 65px;
+    display: flex;
 
-    position: relative;
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 
+.semi-match {
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 0 auto 75px;
+}
+
+
+.semi-match:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   MATCH BOX
+========================================== */
+
 .match {
-    background: #000;
+
+    width: 100%;
 
     border: 1px solid #164c76;
 
-    width: 100%;
+    background: #000;
 }
 
 
 .team-row {
+
     min-height: 55px;
 
     display: flex;
@@ -428,10 +278,13 @@ tbody tr:hover {
 
 .team-row strong {
     font-size: 17px;
+
+    margin-left: 15px;
 }
 
 
 .team-row.winner {
+
     background: #082d70;
 
     border-left: 4px solid #009dff;
@@ -439,87 +292,90 @@ tbody tr:hover {
 
 
 /* ==========================================
-   BRACKET LINES
+   CONNECTOR AREA
 ========================================== */
 
-/*
-   Semi Final 1
-   -> horizontal line
-*/
+.connector-area {
 
-.semi-match:nth-of-type(2)::after {
-    content: "";
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* Semua garisan */
+
+.line {
 
     position: absolute;
+
+    background: #007fcf;
+}
+
+
+/* ==========================================
+   SEMI 1 -> TENGAH
+========================================== */
+
+.semi-line-top {
+
+    height: 2px;
+
+    width: 50%;
+
+    left: 0;
+
+    top: 36%;
+}
+
+
+/* ==========================================
+   SEMI 2 -> TENGAH
+========================================== */
+
+.semi-line-bottom {
+
+    height: 2px;
+
+    width: 50%;
+
+    left: 0;
+
+    top: 64%;
+}
+
+
+/* ==========================================
+   GARISAN MENEGAK
+========================================== */
+
+.vertical-line {
+
+    width: 2px;
+
+    height: 28%;
+
+    left: 50%;
+
+    top: 36%;
+}
+
+
+/* ==========================================
+   TENGAH -> GRAND FINAL
+========================================== */
+
+.final-line {
+
+    height: 2px;
+
+    width: 50%;
+
+    right: 0;
 
     top: 50%;
-
-    left: 100%;
-
-    width: 60px;
-
-    border-top: 2px solid #007fcf;
-}
-
-
-/*
-   Semi Final 2
-   -> horizontal line
-*/
-
-.semi-match:nth-of-type(3)::after {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-
-    left: 100%;
-
-    width: 60px;
-
-    border-top: 2px solid #007fcf;
-}
-
-
-/*
-   Vertical connector
-   between Semi Final 1
-   and Semi Final 2
-*/
-
-.semi-finals-round::after {
-    content: "";
-
-    position: absolute;
-
-    top: 185px;
-
-    right: -60px;
-
-    height: 250px;
-
-    border-right: 2px solid #007fcf;
-}
-
-
-/*
-   Connector from middle
-   into Grand Final
-*/
-
-.semi-finals-round::before {
-    content: "";
-
-    position: absolute;
-
-    top: 310px;
-
-    right: -120px;
-
-    width: 120px;
-
-    border-top: 2px solid #007fcf;
 }
 
 
@@ -527,22 +383,31 @@ tbody tr:hover {
    GRAND FINAL
 ========================================== */
 
-.grand-final-round {
-    position: relative;
-
-    padding-top: 185px;
+.final-round {
 
     width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding-left: 0;
 }
 
 
-.grand-final-round h2 {
-    margin-bottom: 8px;
+.final-round .bo {
+
+    margin-bottom: 25px;
 }
 
 
-.grand-match {
-    max-width: 420px;
+.final-match {
+
+    width: 100%;
+
+    max-width: 400px;
 
     margin: 0 auto;
 }
@@ -552,34 +417,44 @@ tbody tr:hover {
    QUALIFIED TEAMS
 ========================================== */
 
-.qualified-round {
-    grid-column: 1 / 3;
+.qualified-section {
 
-    width: 100%;
+    margin-top: 45px;
 
-    margin-top: 35px;
+    padding: 30px;
 
-    padding-top: 35px;
+    border: 1px solid #164c76;
 
-    border-top: 1px solid #123e63;
+    background: #000;
+}
+
+
+.qualified-section h2 {
+
+    text-align: center;
+
+    font-size: 21px;
+
+    margin-bottom: 25px;
 }
 
 
 .qualified-grid {
-    max-width: 1000px;
 
-    margin: 25px auto 0;
+    max-width: 1100px;
+
+    margin: auto;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
 }
 
 
 .qualified-card {
+
     min-height: 65px;
 
     display: flex;
@@ -593,6 +468,7 @@ tbody tr:hover {
 
 
 .rank {
+
     width: 58px;
 
     height: 65px;
@@ -614,20 +490,21 @@ tbody tr:hover {
 
 
 .team-name {
+
     padding-left: 15px;
 
-    font-weight: bold;
-
     font-size: 14px;
+
+    font-weight: bold;
 }
 
 
 /* ==========================================
    THIRD PLACE MATCH
-   SEPARATE
 ========================================== */
 
 .third-place-section {
+
     width: 550px;
 
     max-width: 100%;
@@ -636,31 +513,42 @@ tbody tr:hover {
 
     padding: 30px;
 
-    text-align: center;
-
     border: 1px solid #164c76;
 
     background: #000;
+
+    text-align: center;
 }
 
 
 .third-place-section h2 {
+
     font-size: 22px;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+}
+
+
+.third-place-section .bo {
+
+    margin-bottom: 25px;
 }
 
 
 .third-match {
-    max-width: 420px;
 
-    margin: 25px auto 18px;
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 0 auto 18px;
 
     text-align: left;
 }
 
 
 .third-result {
+
     padding: 12px;
 
     border: 1px solid #164c76;
@@ -678,6 +566,7 @@ tbody tr:hover {
 ========================================== */
 
 .note-box {
+
     max-width: 650px;
 
     margin: 45px auto 0;
@@ -691,6 +580,7 @@ tbody tr:hover {
 
 
 .note-box h2 {
+
     color: #009dff;
 
     margin-bottom: 10px;
@@ -698,6 +588,7 @@ tbody tr:hover {
 
 
 .note-box p {
+
     color: #aaa;
 }
 
@@ -707,6 +598,7 @@ tbody tr:hover {
 ========================================== */
 
 footer {
+
     text-align: center;
 
     padding: 25px;
@@ -721,44 +613,39 @@ footer {
    TABLET
 ========================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
 
-    .playoff-bracket {
+    .bracket-wrapper {
+
         grid-template-columns: 1fr;
 
-        row-gap: 50px;
+        gap: 40px;
+
+        padding: 40px 25px;
     }
 
 
-    .grand-final-round {
-        padding-top: 0;
+    .connector-area {
+
+        display: none;
     }
 
 
-    .qualified-round {
-        grid-column: 1;
+    .semi-round {
 
-        margin-top: 0;
+        height: auto;
+    }
+
+
+    .final-round {
+
+        padding: 0;
     }
 
 
     .qualified-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
 
-
-    /*
-       Hide bracket connectors
-       on smaller screens
-    */
-
-    .semi-finals-round::before,
-    .semi-finals-round::after,
-
-    .semi-match:nth-of-type(2)::after,
-    .semi-match:nth-of-type(3)::after {
-        display: none;
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -768,9 +655,10 @@ footer {
    MOBILE
 ========================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     nav {
+
         flex-direction: column;
 
         gap: 10px;
@@ -780,6 +668,7 @@ footer {
 
 
     .nav-links {
+
         gap: 15px;
 
         flex-wrap: wrap;
@@ -789,40 +678,48 @@ footer {
 
 
     .nav-links a {
+
         padding: 7px 0;
 
         font-size: 11px;
     }
 
 
-    .home h1 {
-        font-size: 55px;
-    }
-
-
-    .home h2 {
-        font-size: 15px;
-    }
-
-
-    .page-header h1,
     .playoff-header h1 {
+
         font-size: 25px;
     }
 
 
-    .playoff-bracket {
-        padding: 35px 15px;
+    .bracket-wrapper {
+
+        padding: 30px 15px;
     }
 
 
     .qualified-grid {
+
         grid-template-columns: 1fr;
     }
 
 
-    .third-place-section {
+    .qualified-section {
+
         padding: 20px;
+    }
+
+
+    .third-place-section {
+
+        padding: 20px;
+    }
+
+
+    .team-row {
+
+        font-size: 13px;
+
+        padding: 0 12px;
     }
 
 }
