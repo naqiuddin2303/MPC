@@ -15,8 +15,13 @@
 
 </head>
 
+
 <body>
 
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
 
 <nav>
 
@@ -44,13 +49,25 @@
 </nav>
 
 
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
 <main class="page-container">
 
+
+    <!-- BACK -->
 
     <a href="/" class="back">
         ← KEMBALI
     </a>
 
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
 
     <header class="playoff-header">
 
@@ -65,18 +82,20 @@
     </header>
 
 
-    <!-- ==================================
+
+    <!-- ==========================================
          MAIN BRACKET
-    =================================== -->
+    =========================================== -->
 
-    <section class="bracket">
+    <section class="playoff-bracket">
 
 
-        <!-- =================================
-             SEMI FINAL
-        ================================== -->
+        <!-- ======================================
+             SEMI FINALS
+        ======================================= -->
 
         <div class="semi-column">
+
 
             <h2>
                 SEMI FINALS
@@ -85,6 +104,7 @@
             <p class="bo">
                 BO3
             </p>
+
 
 
             <!-- SEMI FINAL 1 -->
@@ -123,6 +143,7 @@
             </div>
 
 
+
             <!-- SEMI FINAL 2 -->
 
             <div class="bracket-match">
@@ -158,12 +179,14 @@
 
             </div>
 
+
         </div>
 
 
-        <!-- =================================
+
+        <!-- ======================================
              CONNECTOR
-        ================================== -->
+        ======================================= -->
 
         <div class="bracket-connector">
 
@@ -176,11 +199,13 @@
         </div>
 
 
-        <!-- =================================
-             GRAND FINAL
-        ================================== -->
+
+        <!-- ======================================
+             GRAND FINALS
+        ======================================= -->
 
         <div class="grand-column">
+
 
             <h2>
                 GRAND FINALS
@@ -224,51 +249,22 @@
 
             </div>
 
+
         </div>
 
 
     </section>
 
 
-    <!-- ==================================
-         QUALIFIED TEAMS
-    =================================== -->
 
-    <section class="qualified-section">
-
-        <h2>
-            QUALIFIED PLAYOFF TEAMS
-        </h2>
-
-
-        <div class="qualified-grid">
-
-            {% for team in playoff_teams %}
-
-            <div class="qualified-card">
-
-                <span class="rank">
-                    {{ loop.index }}
-                </span>
-
-                <span class="team-name">
-                    {{ team }}
-                </span>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         THIRD PLACE
-    =================================== -->
+    <!-- ==========================================
+         THIRD PLACE MATCH
+         SEPARATE
+         NO CONNECTOR
+    =========================================== -->
 
     <section class="third-place-section">
+
 
         <h2>
             THIRD PLACE MATCH
@@ -319,28 +315,77 @@
 
         </div>
 
+
     </section>
 
 
-    <!-- ==================================
+
+    <!-- ==========================================
+         QUALIFIED PLAYOFF TEAMS
+    =========================================== -->
+
+    <section class="qualified-section">
+
+
+        <h2>
+            QUALIFIED PLAYOFF TEAMS
+        </h2>
+
+
+        <div class="qualified-grid">
+
+
+            {% for team in playoff_teams %}
+
+            <div class="qualified-card">
+
+                <span class="rank">
+                    {{ loop.index }}
+                </span>
+
+                <span class="team-name">
+                    {{ team }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==========================================
          NOTE
-    =================================== -->
+    =========================================== -->
 
     <section class="note-box">
+
 
         <h2>
             NOTE
         </h2>
 
+
         <p>
             All matches are played in Best of format (BO).
         </p>
+
 
     </section>
 
 
 </main>
 
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer>
 
