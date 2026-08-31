@@ -15,20 +15,13 @@
 
 </head>
 
-
 <body>
-
-
-<!-- ==========================================
-     NAVIGATION
-========================================== -->
 
 <nav>
 
     <div class="logo-text">
         MPC
     </div>
-
 
     <div class="nav-links">
 
@@ -40,11 +33,8 @@
             LEADERBOARD
         </a>
 
-        <a href="/playoff"
-           class="active">
-
+        <a href="/playoff" class="active">
             PLAYOFF STAGE
-
         </a>
 
     </div>
@@ -52,23 +42,12 @@
 </nav>
 
 
-
-<!-- ==========================================
-     MAIN PAGE
-========================================== -->
-
 <main class="page-container">
-
 
     <a href="/" class="back">
         ← KEMBALI
     </a>
 
-
-
-    <!-- ======================================
-         HEADER
-    ======================================= -->
 
     <header class="playoff-header">
 
@@ -81,7 +60,6 @@
         </p>
 
     </header>
-
 
 
     <!-- ======================================
@@ -108,7 +86,7 @@
 
             <!-- SEMI FINAL 1 -->
 
-            <div class="semi-match">
+            <div class="semi-match semi-one">
 
                 <div class="match">
 
@@ -123,7 +101,6 @@
                         </strong>
 
                     </div>
-
 
                     <div class="team-row">
 
@@ -142,10 +119,9 @@
             </div>
 
 
-
             <!-- SEMI FINAL 2 -->
 
-            <div class="semi-match">
+            <div class="semi-match semi-two">
 
                 <div class="match">
 
@@ -160,7 +136,6 @@
                         </strong>
 
                     </div>
-
 
                     <div class="team-row">
 
@@ -180,6 +155,22 @@
 
         </div>
 
+
+        <!-- ==================================
+             CONNECTOR
+        =================================== -->
+
+        <div class="bracket-connector">
+
+            <div class="connector-top"></div>
+
+            <div class="connector-bottom"></div>
+
+            <div class="connector-vertical"></div>
+
+            <div class="connector-middle"></div>
+
+        </div>
 
 
         <!-- ==================================
@@ -213,7 +204,6 @@
 
                     </div>
 
-
                     <div class="team-row">
 
                         <span>
@@ -232,41 +222,18 @@
 
         </div>
 
-
-        <!-- ==================================
-             CONNECTOR OVERLAY
-        =================================== -->
-
-        <div class="connector">
-
-            <span class="connector-top"></span>
-
-            <span class="connector-bottom"></span>
-
-            <span class="connector-vertical"></span>
-
-            <span class="connector-final"></span>
-
-        </div>
-
-
     </section>
-
 
 
     <!-- ======================================
          THIRD PLACE MATCH
-         SEPARATE
-         NO CONNECTOR
     ======================================= -->
 
     <section class="third-place-section">
 
-
         <h2>
             THIRD PLACE MATCH
         </h2>
-
 
         <p class="bo">
             BO3
@@ -289,7 +256,6 @@
 
                 </div>
 
-
                 <div class="team-row">
 
                     <span>
@@ -308,22 +274,18 @@
 
 
         <div class="third-result">
-
             WINNER GETS 3RD PLACE
-
         </div>
-
 
     </section>
 
 
-
     <!-- ======================================
-         QUALIFIED TEAMS
+         QUALIFIED PLAYOFF TEAMS
+         4 TEAM SAHAJA
     ======================================= -->
 
     <section class="qualified-section">
-
 
         <h2>
             QUALIFIED PLAYOFF TEAMS
@@ -332,9 +294,7 @@
 
         <div class="qualified-grid">
 
-
             {% for team in playoff_teams %}
-
 
             <div class="qualified-card">
 
@@ -348,15 +308,11 @@
 
             </div>
 
-
             {% endfor %}
-
 
         </div>
 
-
     </section>
-
 
 
     <!-- ======================================
@@ -370,27 +326,18 @@
         </h2>
 
         <p>
-            All matches are played in Best of format (BO).
+            Semi Finals are BO3 and Grand Final is BO5.
+            Third Place Match is BO3.
         </p>
 
     </section>
 
-
 </main>
 
 
-
-<!-- ==========================================
-     FOOTER
-========================================== -->
-
 <footer>
-
     © 2026 MPC TOURNAMENT
-
 </footer>
 
-
 </body>
-
 </html>
