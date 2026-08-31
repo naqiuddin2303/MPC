@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>MPC - Leaderboard</title>
+    <title>MPC Leaderboard</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -30,7 +30,8 @@
             HOME
         </a>
 
-        <a href="/leaderboard" class="active">
+        <a href="/leaderboard"
+           class="active">
             LEADERBOARD
         </a>
 
@@ -54,7 +55,7 @@
     <header class="page-header">
 
         <h1>
-            LEADERBOARD
+            MPC
         </h1>
 
         <p>
@@ -64,13 +65,16 @@
     </header>
 
 
-    <!-- PLAYER -->
+    <!-- ==================================
+         PLAYER LEADERBOARD
+    =================================== -->
 
     <section class="table-section">
 
         <h2>
             PLAYER LEADERBOARD
         </h2>
+
 
         <div class="table-container">
 
@@ -79,12 +83,23 @@
                 <thead>
 
                     <tr>
-                        <th>NO</th>
-                        <th>NAMA PLAYER</th>
-                        <th>PTS</th>
+
+                        <th>
+                            NO
+                        </th>
+
+                        <th>
+                            NAMA PLAYER
+                        </th>
+
+                        <th>
+                            PTS
+                        </th>
+
                     </tr>
 
                 </thead>
+
 
                 <tbody>
 
@@ -117,13 +132,16 @@
     </section>
 
 
-    <!-- TEAM -->
+    <!-- ==================================
+         TEAM STATISTICS
+    =================================== -->
 
     <section class="table-section">
 
         <h2>
             TEAM STATISTICS
         </h2>
+
 
         <div class="table-container">
 
@@ -132,13 +150,27 @@
                 <thead>
 
                     <tr>
-                        <th>NO</th>
-                        <th>TEAM</th>
-                        <th>WIN</th>
-                        <th>LOSS</th>
+
+                        <th>
+                            NO
+                        </th>
+
+                        <th>
+                            TEAM
+                        </th>
+
+                        <th>
+                            WIN
+                        </th>
+
+                        <th>
+                            LOSS
+                        </th>
+
                     </tr>
 
                 </thead>
+
 
                 <tbody>
 
@@ -179,9 +211,12 @@
 
 
 <footer>
+
     © 2026 MPC TOURNAMENT
+
 </footer>
 
 
 </body>
+
 </html>
