@@ -9,36 +9,12 @@ app = Flask(__name__)
 # ==========================================
 
 teams = [
-    {
-        "name": "TEAM 1",
-        "win": 5,
-        "loss": 0
-    },
-    {
-        "name": "TEAM 2",
-        "win": 4,
-        "loss": 1
-    },
-    {
-        "name": "TEAM 3",
-        "win": 3,
-        "loss": 2
-    },
-    {
-        "name": "TEAM 4",
-        "win": 2,
-        "loss": 3
-    },
-    {
-        "name": "TEAM 5",
-        "win": 1,
-        "loss": 4
-    },
-    {
-        "name": "TEAM 6",
-        "win": 0,
-        "loss": 5
-    }
+    {"name": "TEAM 1", "win": 5, "loss": 0},
+    {"name": "TEAM 2", "win": 4, "loss": 1},
+    {"name": "TEAM 3", "win": 3, "loss": 2},
+    {"name": "TEAM 4", "win": 2, "loss": 3},
+    {"name": "TEAM 5", "win": 1, "loss": 4},
+    {"name": "TEAM 6", "win": 0, "loss": 5}
 ]
 
 
@@ -82,7 +58,7 @@ players = [
 
 
 # ==========================================
-# PLAYOFF TEAMS
+# PLAYOFF
 # HANYA 4 TEAM
 # ==========================================
 
@@ -99,21 +75,18 @@ playoff_teams = [
 # ==========================================
 
 semi_finals = [
-
     {
         "team1": "TEAM 1",
         "score1": 0,
         "team2": "TEAM 4",
         "score2": 0
     },
-
     {
         "team1": "TEAM 2",
         "score1": 0,
         "team2": "TEAM 3",
         "score2": 0
     }
-
 ]
 
 
@@ -122,10 +95,8 @@ semi_finals = [
 # ==========================================
 
 grand_final = {
-
     "team1": "WINNER SF1",
     "score1": 0,
-
     "team2": "WINNER SF2",
     "score2": 0
 }
@@ -136,10 +107,8 @@ grand_final = {
 # ==========================================
 
 third_place = {
-
     "team1": "LOSER SF1",
     "score1": 0,
-
     "team2": "LOSER SF2",
     "score2": 0
 }
@@ -151,10 +120,7 @@ third_place = {
 
 @app.route("/")
 def home():
-
-    return render_template(
-        "index.html"
-    )
+    return render_template("index.html")
 
 
 # ==========================================
@@ -163,7 +129,6 @@ def home():
 
 @app.route("/leaderboard")
 def leaderboard():
-
     return render_template(
         "leaderboard.html",
         teams=teams,
@@ -177,16 +142,11 @@ def leaderboard():
 
 @app.route("/playoff")
 def playoff():
-
     return render_template(
         "playoff.html",
-
         playoff_teams=playoff_teams,
-
         semi_finals=semi_finals,
-
         grand_final=grand_final,
-
         third_place=third_place
     )
 
