@@ -41,13 +41,18 @@
 
         <a href="/playoff"
            class="active">
+
             PLAYOFF STAGE
+
+        </a>
+
+        <a href="/moments">
+            MOMENTS
         </a>
 
     </div>
 
 </nav>
-
 
 
 <!-- ==========================================
@@ -57,17 +62,13 @@
 <main class="page-container">
 
 
-    <!-- BACK -->
+    <a href="/"
+       class="back">
 
-    <a href="/" class="back">
         ← KEMBALI
+
     </a>
 
-
-
-    <!-- ==========================================
-         HEADER
-    =========================================== -->
 
     <header class="playoff-header">
 
@@ -82,34 +83,36 @@
     </header>
 
 
-
-    <!-- ==========================================
+    <!-- ======================================
          MAIN BRACKET
-    =========================================== -->
+    ======================================= -->
 
     <section class="playoff-bracket">
 
 
-        <!-- ======================================
+        <!-- ==================================
              SEMI FINALS
-        ======================================= -->
+        =================================== -->
 
-        <div class="semi-column">
+        <div class="semi-finals">
 
 
-            <h2>
-                SEMI FINALS
-            </h2>
+            <div class="round-title">
 
-            <p class="bo">
-                BO3
-            </p>
+                <h2>
+                    SEMI FINALS
+                </h2>
 
+                <span>
+                    BO3
+                </span>
+
+            </div>
 
 
             <!-- SEMI FINAL 1 -->
 
-            <div class="bracket-match">
+            <div class="semi-match semi-match-1">
 
                 <div class="match">
 
@@ -143,10 +146,9 @@
             </div>
 
 
-
             <!-- SEMI FINAL 2 -->
 
-            <div class="bracket-match">
+            <div class="semi-match semi-match-2">
 
                 <div class="match">
 
@@ -179,41 +181,43 @@
 
             </div>
 
-
         </div>
 
 
-
-        <!-- ======================================
+        <!-- ==================================
              CONNECTOR
-        ======================================= -->
+        =================================== -->
 
-        <div class="bracket-connector">
+        <div class="bracket-lines">
 
-            <div class="connector-top"></div>
+            <div class="line-top"></div>
 
-            <div class="connector-bottom"></div>
+            <div class="line-bottom"></div>
 
-            <div class="connector-middle"></div>
+            <div class="line-vertical"></div>
+
+            <div class="line-to-final"></div>
 
         </div>
 
 
+        <!-- ==================================
+             GRAND FINAL
+        =================================== -->
 
-        <!-- ======================================
-             GRAND FINALS
-        ======================================= -->
+        <div class="grand-final">
 
-        <div class="grand-column">
+            <div class="round-title">
 
+                <h2>
+                    GRAND FINALS
+                </h2>
 
-            <h2>
-                GRAND FINALS
-            </h2>
+                <span>
+                    BO5
+                </span>
 
-            <p class="bo">
-                BO5
-            </p>
+            </div>
 
 
             <div class="grand-match">
@@ -249,30 +253,63 @@
 
             </div>
 
-
         </div>
 
 
     </section>
 
 
+    <!-- ======================================
+         QUALIFIED TEAMS
+    ======================================= -->
 
-    <!-- ==========================================
-         THIRD PLACE MATCH
-         SEPARATE
-         NO CONNECTOR
-    =========================================== -->
+    <section class="qualified-section">
+
+        <h2>
+            QUALIFIED PLAYOFF TEAMS
+        </h2>
+
+
+        <div class="qualified-grid">
+
+            {% for team in playoff_teams %}
+
+            <div class="qualified-card">
+
+                <span class="rank">
+                    {{ loop.index }}
+                </span>
+
+                <span class="team-name">
+                    {{ team }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         THIRD PLACE
+    ======================================= -->
 
     <section class="third-place-section">
 
+        <div class="round-title">
 
-        <h2>
-            THIRD PLACE MATCH
-        </h2>
+            <h2>
+                THIRD PLACE MATCH
+            </h2>
 
-        <p class="bo">
-            BO3
-        </p>
+            <span>
+                BO3
+            </span>
+
+        </div>
 
 
         <div class="third-match">
@@ -315,77 +352,28 @@
 
         </div>
 
-
     </section>
 
 
-
-    <!-- ==========================================
-         QUALIFIED PLAYOFF TEAMS
-    =========================================== -->
-
-    <section class="qualified-section">
-
-
-        <h2>
-            QUALIFIED PLAYOFF TEAMS
-        </h2>
-
-
-        <div class="qualified-grid">
-
-
-            {% for team in playoff_teams %}
-
-            <div class="qualified-card">
-
-                <span class="rank">
-                    {{ loop.index }}
-                </span>
-
-                <span class="team-name">
-                    {{ team }}
-                </span>
-
-            </div>
-
-            {% endfor %}
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ==========================================
+    <!-- ======================================
          NOTE
-    =========================================== -->
+    ======================================= -->
 
     <section class="note-box">
-
 
         <h2>
             NOTE
         </h2>
 
-
         <p>
             All matches are played in Best of format (BO).
         </p>
-
 
     </section>
 
 
 </main>
 
-
-
-<!-- ==========================================
-     FOOTER
-========================================== -->
 
 <footer>
 
