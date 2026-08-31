@@ -1,16 +1,269 @@
 /* ==========================================
-   PLAYOFF STAGE
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    background: #000;
+    border-bottom: 1px solid #12345a;
+}
+
+.logo-text,
+.logo {
+    color: #009dff;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.nav-links,
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a,
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 25px 0;
+}
+
+.nav-links a:hover,
+.menu a:hover {
+    color: #009dff;
+}
+
+.nav-links a.active {
+    color: #009dff;
+    border-bottom: 3px solid #009dff;
+}
+
+
+/* ==========================================
+   HOME
+========================================== */
+
+.home {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #061a30 0%,
+            #02080f 45%,
+            #000 80%
+        );
+}
+
+.home-content {
+    padding: 40px;
+}
+
+.home h1 {
+    font-size: 100px;
+    letter-spacing: 10px;
+    margin-bottom: 15px;
+}
+
+.home h2 {
+    color: #009dff;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.home p,
+.welcome {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    color: #fff;
+
+    border: 1px solid #009dff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #082d70;
+    color: #00aaff;
+}
+
+
+/* ==========================================
+   GENERAL PAGE
+========================================== */
+
+.page-container {
+    width: 94%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 25px 0 70px;
+}
+
+.back {
+    display: inline-block;
+    color: #009dff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+.playoff-header,
+.page-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.playoff-header h1,
+.page-header h1 {
+    background: #082d70;
+    border: 1px solid #075fa5;
+    padding: 18px;
+    font-size: 34px;
+}
+
+.playoff-header p,
+.page-header p {
+    color: #009dff;
+    margin-top: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+/* ==========================================
+   LEADERBOARD
+========================================== */
+
+.leaderboard {
+    width: 94%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 25px 0 70px;
+}
+
+.leaderboard h1 {
+    background: #082d70;
+    border: 1px solid #075fa5;
+    text-align: center;
+    padding: 18px;
+    font-size: 34px;
+}
+
+.subtitle {
+    color: #009dff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+.leaderboard section {
+    margin-top: 35px;
+}
+
+.leaderboard section h2 {
+    text-align: center;
+    background: #082d70;
+    border: 1px solid #075fa5;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #082d70;
+    border: 1px solid #164c76;
+    padding: 15px;
+}
+
+td {
+    border: 1px solid #15334e;
+    padding: 13px;
+    text-align: center;
+}
+
+tbody tr:hover,
+tr:hover {
+    background: #031426;
+}
+
+td.left {
+    text-align: left;
+}
+
+
+/* ==========================================
+   PLAYOFF BRACKET
 ========================================== */
 
 .bracket {
     width: 100%;
     max-width: 1200px;
+
     margin: 50px auto 0;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
 
-    gap: 0;
+    grid-template-columns:
+        minmax(0, 1fr)
+        120px
+        minmax(0, 1fr);
 
     align-items: center;
 
@@ -23,8 +276,6 @@
 ========================================== */
 
 .semi-column {
-    position: relative;
-
     width: 100%;
     min-width: 0;
 }
@@ -32,32 +283,20 @@
 .semi-column h2,
 .grand-column h2 {
     text-align: center;
-
     font-size: 22px;
-
     margin-bottom: 5px;
 }
 
 .bo {
     text-align: center;
-
     color: #777;
-
     font-size: 13px;
-
     margin-bottom: 25px;
 }
 
-
-/* ==========================================
-   SEMI MATCH
-========================================== */
-
 .bracket-match {
     width: 100%;
-
     max-width: 420px;
-
     margin: 0 auto 75px;
 }
 
@@ -72,20 +311,15 @@
 
 .match {
     width: 100%;
-
-    border: 1px solid #075fa5;
-
     background: #000;
+    border: 1px solid #075fa5;
 }
-
 
 .team-row {
     min-height: 55px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 18px;
@@ -93,19 +327,14 @@
     border-bottom: 1px solid #164c76;
 
     font-size: 14px;
-
-    color: #fff;
 }
-
 
 .team-row:last-child {
     border-bottom: none;
 }
 
-
 .team-row strong {
     font-size: 17px;
-
     color: #fff;
 }
 
@@ -118,65 +347,46 @@
     position: relative;
 
     width: 120px;
-
     height: 300px;
 
     margin: 0 auto;
 }
 
-
-/* Garis dari Semi Final 1 */
-
 .connector-top {
     position: absolute;
 
     left: 0;
-
     top: 65px;
 
     width: 60px;
-
     height: 2px;
 
     background: #009dff;
 }
-
-
-/* Garis dari Semi Final 2 */
 
 .connector-bottom {
     position: absolute;
 
     left: 0;
-
     bottom: 65px;
 
     width: 60px;
-
     height: 2px;
 
     background: #009dff;
 }
 
-
-/* Garis tengah */
-
 .connector-middle {
     position: absolute;
 
     left: 60px;
-
     top: 65px;
 
     width: 2px;
-
     height: 170px;
 
     background: #009dff;
 }
-
-
-/* Garis masuk Grand Final */
 
 .connector-middle::after {
     content: "";
@@ -184,11 +394,9 @@
     position: absolute;
 
     left: 0;
-
     top: 85px;
 
     width: 60px;
-
     height: 2px;
 
     background: #009dff;
@@ -201,18 +409,12 @@
 
 .grand-column {
     width: 100%;
-
     min-width: 0;
-
-    position: relative;
 }
-
 
 .grand-match {
     width: 100%;
-
     max-width: 420px;
-
     margin: 0 auto;
 }
 
@@ -223,7 +425,6 @@
 
 .qualified-section {
     width: 100%;
-
     max-width: 1200px;
 
     margin: 70px auto 0;
@@ -233,15 +434,11 @@
     border-top: 1px solid #123e63;
 }
 
-
 .qualified-section h2 {
     text-align: center;
-
     font-size: 22px;
-
     margin-bottom: 25px;
 }
-
 
 .qualified-grid {
     width: 100%;
@@ -254,12 +451,10 @@
     gap: 18px;
 }
 
-
 .qualified-card {
     min-height: 65px;
 
     display: flex;
-
     align-items: center;
 
     background: #000;
@@ -267,18 +462,14 @@
     border: 1px solid #164c76;
 }
 
-
 .rank {
     width: 58px;
-
     height: 65px;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background: #082d70;
@@ -286,27 +477,22 @@
     border-right: 1px solid #164c76;
 
     font-size: 20px;
-
     font-weight: bold;
 }
 
-
 .team-name {
     padding-left: 15px;
-
     font-size: 14px;
-
     font-weight: bold;
 }
 
 
 /* ==========================================
-   THIRD PLACE MATCH
+   THIRD PLACE
 ========================================== */
 
 .third-place-section {
     width: 100%;
-
     max-width: 550px;
 
     margin: 60px auto 0;
@@ -320,22 +506,17 @@
     background: #000;
 }
 
-
 .third-place-section h2 {
     font-size: 22px;
-
     margin-bottom: 5px;
 }
 
-
 .third-match {
     width: 100%;
-
     margin: 25px auto 18px;
 
     text-align: left;
 }
-
 
 .third-result {
     padding: 12px;
@@ -345,7 +526,6 @@
     color: #009dff;
 
     font-size: 13px;
-
     font-weight: bold;
 }
 
@@ -356,7 +536,6 @@
 
 .note-box {
     width: 100%;
-
     max-width: 650px;
 
     margin: 45px auto 0;
@@ -368,13 +547,10 @@
     text-align: center;
 }
 
-
 .note-box h2 {
     color: #009dff;
-
     margin-bottom: 10px;
 }
-
 
 .note-box p {
     color: #aaa;
@@ -382,45 +558,17 @@
 
 
 /* ==========================================
-   PLAYOFF RESPONSIVE
+   FOOTER
 ========================================== */
 
-@media (max-width: 900px) {
+footer {
+    text-align: center;
 
-    .bracket {
-        grid-template-columns: 1fr;
+    padding: 25px;
 
-        gap: 40px;
-    }
+    color: #777;
 
-
-    .bracket-connector {
-        display: none;
-    }
-
-
-    .semi-column,
-    .grand-column {
-        width: 100%;
-    }
-
-
-    .bracket-match {
-        max-width: 500px;
-
-        margin-bottom: 30px;
-    }
-
-
-    .grand-match {
-        max-width: 500px;
-    }
-
-
-    .qualified-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    border-top: 1px solid #102c45;
 }
 
 
@@ -428,47 +576,67 @@
    MOBILE
 ========================================== */
 
-@media (max-width: 600px) {
-
-    .page-container {
-        width: 94%;
-    }
-
+@media (max-width: 900px) {
 
     .bracket {
-        margin-top: 30px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-
-    .semi-column h2,
-    .grand-column h2,
-    .qualified-section h2,
-    .third-place-section h2 {
-        font-size: 19px;
+    .bracket-connector {
+        display: none;
     }
 
-
-    .team-row {
-        min-height: 50px;
-
-        padding: 0 12px;
-
-        font-size: 13px;
+    .bracket-match,
+    .grand-match {
+        max-width: 500px;
     }
 
+    .qualified-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-    .team-row strong {
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links,
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a,
+    .menu a {
+        padding: 7px 0;
+        font-size: 11px;
+    }
+
+    .home h1 {
+        font-size: 55px;
+    }
+
+    .home h2 {
         font-size: 15px;
     }
 
+    .playoff-header h1,
+    .page-header h1 {
+        font-size: 25px;
+    }
 
     .qualified-grid {
         grid-template-columns: 1fr;
     }
 
-
     .third-place-section {
         padding: 20px;
     }
-
 }
