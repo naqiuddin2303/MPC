@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>MPC - Playoff</title>
+    <title>MPC - Playoff Stage</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -19,16 +19,15 @@
 <body>
 
 
-<!-- ==============================
+<!-- ==========================================
      NAVIGATION
-============================== -->
+========================================== -->
 
 <nav>
 
     <div class="logo-text">
         MPC
     </div>
-
 
     <div class="nav-links">
 
@@ -43,12 +42,8 @@
         <a href="/playoff"
            class="active">
 
-            PLAYOFF
+            PLAYOFF STAGE
 
-        </a>
-
-        <a href="/moments">
-            MOMENTS
         </a>
 
     </div>
@@ -56,17 +51,16 @@
 </nav>
 
 
+<!-- ==========================================
+     PLAYOFF
+========================================== -->
 
 <main class="page-container">
 
 
-    <a href="/"
-       class="back">
-
+    <a href="/" class="back">
         ← KEMBALI
-
     </a>
-
 
 
     <header class="playoff-header">
@@ -82,35 +76,31 @@
     </header>
 
 
-
-    <!-- =================================================
+    <!-- ======================================
          MAIN BRACKET
-    ================================================== -->
+    ======================================= -->
 
     <section class="playoff-bracket">
 
 
-        <!-- ==========================
+        <!-- ==================================
              SEMI FINALS
-        =========================== -->
+        =================================== -->
 
-        <div class="semi-column">
-
+        <div class="semi-finals">
 
             <h2>
                 SEMI FINALS
             </h2>
-
 
             <p class="bo">
                 BO3
             </p>
 
 
-
             <!-- SEMI FINAL 1 -->
 
-            <div class="bracket-match">
+            <div class="semi-match">
 
                 <div class="match">
 
@@ -144,10 +134,9 @@
             </div>
 
 
-
             <!-- SEMI FINAL 2 -->
 
-            <div class="bracket-match">
+            <div class="semi-match">
 
                 <div class="match">
 
@@ -180,40 +169,35 @@
 
             </div>
 
-
         </div>
 
 
-
-        <!-- ==========================
+        <!-- ==================================
              CONNECTOR
-        =========================== -->
+        =================================== -->
 
-        <div class="connector-area">
+        <div class="bracket-lines">
 
-            <div class="connector-line top-line"></div>
+            <div class="line-top"></div>
 
-            <div class="connector-line bottom-line"></div>
+            <div class="line-bottom"></div>
 
-            <div class="connector-vertical"></div>
+            <div class="line-middle"></div>
 
-            <div class="connector-to-final"></div>
+            <div class="line-final"></div>
 
         </div>
 
 
-
-        <!-- ==========================
+        <!-- ==================================
              GRAND FINAL
-        =========================== -->
+        =================================== -->
 
-        <div class="grand-column">
-
+        <div class="grand-final">
 
             <h2>
                 GRAND FINAL
             </h2>
-
 
             <p class="bo">
                 BO5
@@ -221,7 +205,6 @@
 
 
             <div class="grand-match">
-
 
                 <div class="match">
 
@@ -252,9 +235,7 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
@@ -262,66 +243,17 @@
     </section>
 
 
-
-    <!-- =================================================
-         QUALIFIED TEAMS
-    ================================================== -->
-
-    <section class="qualified-section">
-
-
-        <h2>
-            QUALIFIED PLAYOFF TEAMS
-        </h2>
-
-
-        <div class="qualified-grid">
-
-
-            {% for team in playoff_teams %}
-
-
-            <div class="qualified-card">
-
-
-                <span class="rank">
-
-                    {{ loop.index }}
-
-                </span>
-
-
-                <span class="team-name">
-
-                    {{ team }}
-
-                </span>
-
-
-            </div>
-
-
-            {% endfor %}
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         THIRD PLACE
-    ================================================== -->
+    <!-- ======================================
+         THIRD PLACE MATCH
+         SEPARATE
+         NO CONNECTOR
+    ======================================= -->
 
     <section class="third-place-section">
-
 
         <h2>
             THIRD PLACE MATCH
         </h2>
-
 
         <p class="bo">
             BO3
@@ -330,9 +262,7 @@
 
         <div class="third-match">
 
-
             <div class="match">
-
 
                 <div class="team-row">
 
@@ -359,9 +289,7 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
@@ -372,33 +300,61 @@
 
         </div>
 
+    </section>
+
+
+    <!-- ======================================
+         QUALIFIED TEAMS
+    ======================================= -->
+
+    <section class="qualified-section">
+
+        <h2>
+            QUALIFIED PLAYOFF TEAMS
+        </h2>
+
+
+        <div class="qualified-grid">
+
+            {% for team in playoff_teams %}
+
+            <div class="qualified-card">
+
+                <span class="rank">
+                    {{ loop.index }}
+                </span>
+
+                <span class="team-name">
+                    {{ team }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
 
     </section>
 
 
-
-    <!-- =================================================
+    <!-- ======================================
          NOTE
-    ================================================== -->
+    ======================================= -->
 
     <section class="note-box">
-
 
         <h2>
             NOTE
         </h2>
 
-
         <p>
             All matches are played in Best of format (BO).
         </p>
-
 
     </section>
 
 
 </main>
-
 
 
 <footer>
