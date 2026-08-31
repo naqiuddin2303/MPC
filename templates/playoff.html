@@ -18,6 +18,10 @@
 <body>
 
 
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
 <nav>
 
     <div class="logo-text">
@@ -43,6 +47,10 @@
 </nav>
 
 
+<!-- ==========================================
+     MAIN
+========================================== -->
+
 <main class="page-container">
 
 
@@ -50,6 +58,10 @@
         ← KEMBALI
     </a>
 
+
+    <!-- ======================================
+         TITLE
+    ======================================= -->
 
     <header class="playoff-header">
 
@@ -64,18 +76,18 @@
     </header>
 
 
-    <!-- =====================================
-         MAIN BRACKET
-    ====================================== -->
+    <!-- ======================================
+         PLAYOFF BRACKET
+    ======================================= -->
 
-    <section class="playoff-bracket">
+    <section class="bracket-wrapper">
 
 
-        <!-- ================================
+        <!-- ==================================
              SEMI FINALS
-        ================================= -->
+        =================================== -->
 
-        <div class="bracket-round semi-finals-round">
+        <div class="round semi-round">
 
             <h2>
                 SEMI FINALS
@@ -86,47 +98,102 @@
             </p>
 
 
-            {% for match in semi_finals %}
+            <!-- SEMI FINAL 1 -->
 
-            <div class="match semi-match">
+            <div class="bracket-match semi-match">
 
-                <div class="team-row">
+                <div class="match">
 
-                    <span>
-                        {{ match.team1 }}
-                    </span>
+                    <div class="team-row">
 
-                    <strong>
-                        {{ match.score1 }}
-                    </strong>
+                        <span>
+                            {{ semi_finals[0].team1 }}
+                        </span>
 
-                </div>
+                        <strong>
+                            {{ semi_finals[0].score1 }}
+                        </strong>
+
+                    </div>
 
 
-                <div class="team-row">
+                    <div class="team-row">
 
-                    <span>
-                        {{ match.team2 }}
-                    </span>
+                        <span>
+                            {{ semi_finals[0].team2 }}
+                        </span>
 
-                    <strong>
-                        {{ match.score2 }}
-                    </strong>
+                        <strong>
+                            {{ semi_finals[0].score2 }}
+                        </strong>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            {% endfor %}
+
+            <!-- SEMI FINAL 2 -->
+
+            <div class="bracket-match semi-match">
+
+                <div class="match">
+
+                    <div class="team-row">
+
+                        <span>
+                            {{ semi_finals[1].team1 }}
+                        </span>
+
+                        <strong>
+                            {{ semi_finals[1].score1 }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="team-row">
+
+                        <span>
+                            {{ semi_finals[1].team2 }}
+                        </span>
+
+                        <strong>
+                            {{ semi_finals[1].score2 }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
 
-        <!-- ================================
-             GRAND FINAL
-        ================================= -->
+        <!-- ==================================
+             BRACKET CONNECTOR
+        =================================== -->
 
-        <div class="bracket-round grand-final-round">
+        <div class="connector-area">
+
+            <div class="line semi-line-top"></div>
+
+            <div class="line semi-line-bottom"></div>
+
+            <div class="line vertical-line"></div>
+
+            <div class="line final-line"></div>
+
+        </div>
+
+
+        <!-- ==================================
+             GRAND FINAL
+        =================================== -->
+
+        <div class="round final-round">
 
             <h2>
                 GRAND FINALS
@@ -137,66 +204,36 @@
             </p>
 
 
-            <div class="match grand-match">
+            <div class="final-match">
 
-                <div class="team-row winner">
+                <div class="match">
 
-                    <span>
-                        {{ grand_final.team1 }}
-                    </span>
+                    <div class="team-row winner">
 
-                    <strong>
-                        {{ grand_final.score1 }}
-                    </strong>
+                        <span>
+                            {{ grand_final.team1 }}
+                        </span>
 
-                </div>
+                        <strong>
+                            {{ grand_final.score1 }}
+                        </strong>
 
-
-                <div class="team-row">
-
-                    <span>
-                        {{ grand_final.team2 }}
-                    </span>
-
-                    <strong>
-                        {{ grand_final.score2 }}
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
+                    </div>
 
 
-        <!-- ================================
-             QUALIFIED TEAMS
-        ================================= -->
+                    <div class="team-row">
 
-        <div class="qualified-round">
+                        <span>
+                            {{ grand_final.team2 }}
+                        </span>
 
-            <h2>
-                QUALIFIED PLAYOFF TEAMS
-            </h2>
+                        <strong>
+                            {{ grand_final.score2 }}
+                        </strong>
 
-
-            <div class="qualified-grid">
-
-                {% for team in playoff_teams %}
-
-                <div class="qualified-card">
-
-                    <span class="rank">
-                        {{ loop.index }}
-                    </span>
-
-                    <span class="team-name">
-                        {{ team }}
-                    </span>
+                    </div>
 
                 </div>
-
-                {% endfor %}
 
             </div>
 
@@ -206,10 +243,43 @@
     </section>
 
 
-    <!-- =====================================
-         THIRD PLACE
-         BERASINGAN
-    ====================================== -->
+    <!-- ======================================
+         QUALIFIED TEAMS
+    ======================================= -->
+
+    <section class="qualified-section">
+
+        <h2>
+            QUALIFIED PLAYOFF TEAMS
+        </h2>
+
+
+        <div class="qualified-grid">
+
+            {% for team in playoff_teams %}
+
+            <div class="qualified-card">
+
+                <span class="rank">
+                    {{ loop.index }}
+                </span>
+
+                <span class="team-name">
+                    {{ team }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         THIRD PLACE MATCH
+    ======================================= -->
 
     <section class="third-place-section">
 
@@ -222,30 +292,34 @@
         </p>
 
 
-        <div class="match third-match">
+        <div class="third-match">
 
-            <div class="team-row">
+            <div class="match">
 
-                <span>
-                    {{ third_place.team1 }}
-                </span>
+                <div class="team-row">
 
-                <strong>
-                    {{ third_place.score1 }}
-                </strong>
+                    <span>
+                        {{ third_place.team1 }}
+                    </span>
 
-            </div>
+                    <strong>
+                        {{ third_place.score1 }}
+                    </strong>
+
+                </div>
 
 
-            <div class="team-row">
+                <div class="team-row">
 
-                <span>
-                    {{ third_place.team2 }}
-                </span>
+                    <span>
+                        {{ third_place.team2 }}
+                    </span>
 
-                <strong>
-                    {{ third_place.score2 }}
-                </strong>
+                    <strong>
+                        {{ third_place.score2 }}
+                    </strong>
+
+                </div>
 
             </div>
 
@@ -261,9 +335,9 @@
     </section>
 
 
-    <!-- =====================================
+    <!-- ======================================
          NOTE
-    ====================================== -->
+    ======================================= -->
 
     <section class="note-box">
 
@@ -281,10 +355,17 @@
 </main>
 
 
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
 <footer>
+
     © 2026 MPC TOURNAMENT
+
 </footer>
 
 
 </body>
+
 </html>
