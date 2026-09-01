@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 teams = [
     {"name": "TEAM B", "win": 1, "loss": 0},
+    {"name": "Arachnid", "win": 1, "loss": 0},
     {"name": "ZENITH", "win": 0, "loss": 1},
-    {"name": "TEAM 3", "win": 3, "loss": 2},
-    {"name": "TEAM 4", "win": 2, "loss": 3},
-    {"name": "TEAM 5", "win": 1, "loss": 4},
-    {"name": "TEAM 6", "win": 0, "loss": 5}
+    {"name": "TEAM E", "win": 0, "loss": 1},
+    {"name": "KAN ESPORT", "win": 0, "loss": 0},
+    {"name": "TEAM C", "win": 0, "loss": 0}
 ]
 
 
@@ -24,26 +24,26 @@ teams = [
 # ==========================================
 
 players = [
-    {"name": "PLAYER 1", "pts": 100},
-    {"name": "PLAYER 2", "pts": 95},
-    {"name": "PLAYER 3", "pts": 90},
-    {"name": "PLAYER 4", "pts": 85},
-    {"name": "PLAYER 5", "pts": 80},
-    {"name": "PLAYER 6", "pts": 75},
-    {"name": "PLAYER 7", "pts": 70},
-    {"name": "PLAYER 8", "pts": 65},
-    {"name": "PLAYER 9", "pts": 60},
-    {"name": "PLAYER 10", "pts": 55},
-    {"name": "PLAYER 11", "pts": 50},
-    {"name": "PLAYER 12", "pts": 45},
-    {"name": "PLAYER 13", "pts": 40},
-    {"name": "PLAYER 14", "pts": 35},
-    {"name": "PLAYER 15", "pts": 30},
-    {"name": "PLAYER 16", "pts": 25},
-    {"name": "PLAYER 17", "pts": 20},
-    {"name": "PLAYER 18", "pts": 15},
-    {"name": "PLAYER 19", "pts": 10},
-    {"name": "PLAYER 20", "pts": 5},
+    {"name": "Xylark", "pts": 5},
+    {"name": "mimiii", "pts": 5},
+    {"name": "ReimuHKRI",  "pts": 4},
+    {"name": "Nerff Feeq.", "pts": 4},
+    {"name": "Super Frince", "pts": 3},
+    {"name": "It's Rezz", "pts": 3},
+    {"name": "narcissist", "pts": 3},
+    {"name": "FakriDude", "pts": 3},
+    {"name": "Dr.moonrox", "pts": 3},
+    {"name": "Capt _Kenny", "pts": 3},
+    {"name": "Renzi", "pts": 3},
+    {"name": "DRayz??", "pts": 2},
+    {"name": "nimo1195", "pts": 2},
+    {"name": "Dysprosium", "pts": 2},
+    {"name": "epiee30.15", "pts": 2},
+    {"name": "yookaa", "pts": 2},
+    {"name": "BapakOreo", "pts": 2},
+    {"name": "Natrium Klorida", "pts": 2},
+    {"name": "KuremariousThelll", "pts": 2},
+    {"name": "PLAYER 20B o nZ.", "pts": 0},
     {"name": "PLAYER 21", "pts": 0},
     {"name": "PLAYER 22", "pts": 0},
     {"name": "PLAYER 23", "pts": 0},
