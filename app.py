@@ -9,8 +9,8 @@ app = Flask(__name__)
 # ==========================================
 
 teams = [
-    {"name": "TEAM 1", "win": 5, "loss": 0},
-    {"name": "TEAM 2", "win": 4, "loss": 1},
+    {"name": "TEAM B", "win": 1, "loss": 0},
+    {"name": "ZENITH", "win": 0, "loss": 1},
     {"name": "TEAM 3", "win": 3, "loss": 2},
     {"name": "TEAM 4", "win": 2, "loss": 3},
     {"name": "TEAM 5", "win": 1, "loss": 4},
