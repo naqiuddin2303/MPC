@@ -43,7 +43,7 @@ players = [
     {"name": "BapakOreo", "pts": 2},
     {"name": "Natrium Klorida", "pts": 2},
     {"name": "KuremariousThelll", "pts": 2},
-    {"name": "PLAYER 20B o nZ.", "pts": 0},
+    {"name": "B o nZ.", "pts": 0},
     {"name": "PLAYER 21", "pts": 0},
     {"name": "PLAYER 22", "pts": 0},
     {"name": "PLAYER 23", "pts": 0},
